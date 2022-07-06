@@ -1,0 +1,23 @@
+<! DOCTYPE html >
+<html>
+  <head>
+    <title> BPD Officer Records</title>
+  </head>
+  <body>
+    <div class="container">
+    <div class = "text-white bg-secondary">
+      <h2>Baltimore Police Department</h2>
+    </div>
+    </div>
+<h1>Officer Information</h1>
+<h4>Details:</h4>
+<ul>
+  <li><b>Name: </b><%= @officer.name %></li>
+  <li><b>Badge Number: </b><%= @officer.badge_number %></li> 
+  <li><b>Under Investigation: </b><%= @officer.under_investigation == true ? "Yes": "No" %></li>
+  <li><b>Total Arrests: </b><%#= @officer.count_arrests %></li>
+  <li><b>All Arrests: </b><%#= link_to "Link", controller: "officer_arrests", action: "index", id: @officer.id %></li>
+</ul>
+</br>
+<h5>Record created at: <%= @officer.created_at %></h5>
+<h5>Record updated at: <%= @officer.updated_at %></h5>

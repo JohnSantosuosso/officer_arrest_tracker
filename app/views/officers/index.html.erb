@@ -1,0 +1,27 @@
+<! DOCTYPE html >
+<html>
+  <head>
+    <title> BPD Officer Records</title>
+  </head>
+  <body>
+    <div class="container">
+    <div class = "text-white bg-secondary">
+      <h2>Baltimore Police Department</h2>
+    </div>
+    </div>
+<table class="table table-bordered">
+    <tr>
+      <th>Officer Name</th>
+      <th>Created at</th>
+      <th>Edit</th>
+    </tr>
+
+      <% @officers.each do |officer| %>
+    <tr>
+        <td><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
+        <td> <%= officer.created_at %></td>
+        <td> <%= link_to "Update Officer", "/officers/#{officer.id}/edit" %> </td>
+      <% end %>
+    </tr>
+
+</table>
