@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+  empty-cells: hide;
+}
+
+h1 {
+  background-color: rgb(200, 207, 200);
+}
+
+tr,
+th,
+td {
+  box-align: center;
+  text-align: left;
+  padding: 2px;
+  border: 1px solid black;
+}
