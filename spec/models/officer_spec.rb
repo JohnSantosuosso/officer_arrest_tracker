@@ -4,15 +4,16 @@ RSpec.describe Officer, type: :model do
   it {should have_many :arrests}
 
   describe 'instance methods' do
-    describe '#average_song_length' do
+    describe '#count' do
       before :each do
-        @prince = Officer.create!(name: 'Prince')
-        @purple = @prince.songs.create!(title: 'Purple Rain', length: 835, play_count: 8934)
-        @beret = @prince.songs.create!(title: 'Raspberry Beret', length: 934, play_count: 930)
-        @other_song = @prince.songs.create!(title: 'Other Song', length: 921, play_count: 630)
+        @officer_1 = Officer.create!(name:"John Jones", badge_number: 42323, under_investigation: true)
+        @arrest_1 = @officer_1.arrests.create!(name: 'James Joyce', age: 32, charge_description: "Alcohol", firearm: true)
+        @arrest_2 = @officer_1.arrests.create!(name: 'Andy Griffith', age: 52, charge_description: "Drug", firearm: true)
+        @officer_2 = Officer.create!(name:"Mark Smith", badge_number: 23243, under_investigation: false)
       end
-        it 'returns the average song length' do
-          expect(@prince.average_song_length.round(2)).to eql(0.89667e3)
+        it 'counts the number of arrests by officer' do
+          expect(@officer_1.count_arrests).to eql(2)
+          expect(@officer_2.count_arrests).to eql(0)
         end
     end
   end
