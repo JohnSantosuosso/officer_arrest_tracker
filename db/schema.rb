@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_06_004517) do
+ActiveRecord::Schema.define(version: 2022_07_06_013412) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "arrests", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.string "charge_description"
+    t.boolean "firearm"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "officer_id"
+    t.index ["officer_id"], name: "index_arrests_on_officer_id"
+  end
 
   create_table "officers", force: :cascade do |t|
     t.string "name"
@@ -23,4 +34,5 @@ ActiveRecord::Schema.define(version: 2022_07_06_004517) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "arrests", "officers"
 end
