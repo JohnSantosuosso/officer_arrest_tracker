@@ -1,0 +1,22 @@
+<! DOCTYPE html >
+<html>
+  <head>
+    <title> BPD Officer Records</title>
+  </head>
+  <body>
+    <div class="container">
+    <div class = "text-white bg-secondary">
+      <h2>Baltimore Police Department</h2>
+    </div>
+    </div>
+
+    <%= form_with url: "/officers/#{@officer.id}", method: 'patch', local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :under_investigation %>
+    <%= form.check_box :under_investigation %>
+    <%= form.submit "Update Officer" %>
+    <% end %>
+    
+  </body>
+</html>

@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   get '/officers', to: 'officers#index'
   get '/officers/:id', to: 'officers#show'
+  get '/officers/:id/edit', to: 'officers#edit'
+
+  patch '/officers/:id', to: 'officers#update'
 end
