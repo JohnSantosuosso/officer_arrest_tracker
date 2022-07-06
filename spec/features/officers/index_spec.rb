@@ -12,24 +12,49 @@ RSpec.describe 'it shows all officers in system' do
 
     visit "/officers"
   end
+
+  it 'links to the arrests index at the top of every page' do
+
+    expect(page).to have_content("Arrests")
+
+    click_link ('Arrests')
+    expect(current_path).to eql("/arrests")
+  end
+
+  it 'links to the officers index at the top of every page' do
+
+    expect(page).to have_content("Officers")
+
+    click_link ('Officers')
+    expect(current_path).to eql("/officers")
+  end
+
   it 'displays officer names' do
 
     expect(page).to have_content("Zac Brown")
     expect(page).to have_content("Mike Davis")
   end
 
-  it 'clicks on officer name to open to the officer page' do
-    #save_and_open_page # from capybara to view whole page
+  it 'clicks on officer name to open the officers page' do
 
     click_link ('Zac Brown')
-
     expect(current_path).to eql("/officers/1")
 
     visit "/officers"
 
     click_link ('Mike Davis')
-
     expect(current_path).to eql("/officers/2")
+  end
+
+  it 'clicks Update Officer link to update an officer by ID' do
+
+    click_link ('Update Zac Brown')
+    expect(current_path).to eql("/officers/1/edit")
+
+    visit "/officers"
+
+    click_link ('Update Mike Davis')
+    expect(current_path).to eql("/officers/2/edit")
   end
 
 end

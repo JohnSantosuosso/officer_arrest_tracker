@@ -31,7 +31,7 @@
     <tr>
         <td><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
         <td> <%= officer.created_at %></td>
-        <td> <%= link_to "Update Officer", "/officers/#{officer.id}/edit" %> </td>
+        <td> <%= link_to "Update #{officer.name}", "/officers/#{officer.id}/edit" %> </td>
       <% end %>
     </tr>
 </table>
