@@ -9,4 +9,19 @@ class OfficersController < ApplicationController
     @officer = Officer.find(params[:id])
   end
 
+  def edit
+    @officer = Officer.find(params[:id])
+  end
+
+  def update
+    officer = Officer.find(params[:id])
+    officer.update(officer_params)
+    redirect_to action: 'show' #updates and returns to updated user's show action
+  end
+
+
+private
+  def officer_params
+    params.permit(:name, :badge_number, :under_investigation)
+  end
 end
