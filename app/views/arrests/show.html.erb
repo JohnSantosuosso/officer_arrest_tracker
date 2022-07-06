@@ -20,23 +20,21 @@
       <h3>Baltimore Police Department Records</h3>
     </div>
     </div>
+    <center><h5>Arrest Information</h5></center>
 <table class="table table-bordered">
     <tr>
       <th>Name</th>
-      <th>Badge Number</th>
-      <th>Under Investigation</th>
-      <th>Total Arrests</th>
-      <th>All Arrests</th>
+      <th>Age</th>
+      <th>Arrest Category</th>
+      <th>Firearm Recovered?</th>
     </tr>
-    <tr>
-        <td><%= @officer.name %> </td>
-        <td><%= @officer.badge_number %></td>
-        <td><%= @officer.under_investigation == true ? "Yes": "No" %></td>
-        <td><%= @officer.count_arrests %></td>
-        <td><%= link_to "View", controller: "officer_arrests", action: "index", id: @officer.id %></td>
+      <%= #@arrest.each do |arrest| %>
+        <tr>
+        <td> <%= @arrest.name %></td>
+        <td> <%= @arrest.age %></td>
+        <td> <%= @arrest.charge_description %></td>
+        <td> <%= @arrest.firearm %></td>
+      <%# end %>
     </tr>
 </table>
-<br>
-<p><b>Record created: </b><%= @officer.created_at %></p>
-<p><b>Record updated: </b><%= @officer.updated_at %></p>
 </html>
