@@ -1,0 +1,37 @@
+<! DOCTYPE html >
+<html>
+  <head>
+    <title> BPD Officer Records</title>
+  </head>
+  <body>
+    <div class="container">
+    <div class = "text-white bg-secondary">
+      <h2>Baltimore Police Department</h2>
+    </div>
+    </div>
+
+<table class="table table-bordered">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Arrest Category</th>
+      <th>Firearm Recovered?</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th>Record</th>
+    </tr>
+
+    <% @arrests.each do |arrest| %>
+    <tr>
+      <td> <%= arrest.name %></td>
+      <td> <%= arrest.age %></td>
+      <td> <%= arrest.charge_description %></td>
+      <td> <%= arrest.firearm %></td>
+      <td> <%= arrest.created_at %></td>
+      <td> <%= arrest.updated_at %></td>
+      <td> <%#= link_to "Link", controller: "arrests", action: "show", id: arrest.id %></td>
+      <% end %>
+    </tr>
+</table>
+</body>
+</html>
