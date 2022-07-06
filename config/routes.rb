@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/officers/:id/edit', to: 'officers#edit'
 
   patch '/officers/:id', to: 'officers#update'
+
+
+  get '/arrests', to: 'arrests#index'
 end
