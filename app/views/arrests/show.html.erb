@@ -20,23 +20,21 @@
       <h3>Baltimore Police Department Records</h3>
     </div>
     </div>
-    <center><h5>Officer Arrest Records: <%= @officer.name %></h5></center>
+    <center><h5>Arrest Information</h5></center>
 <table class="table table-bordered">
     <tr>
       <th>Name</th>
       <th>Age</th>
       <th>Arrest Category</th>
       <th>Firearm Recovered?</th>
-      <th>Record</th>
     </tr>
-      <% @arrests.each do |arrest| %>
+      <%= #@arrest.each do |arrest| %>
         <tr>
-        <td> <%= arrest.name %></td>
-        <td> <%= arrest.age %></td>
-        <td> <%= arrest.charge_description %></td>
-        <td> <%= arrest.firearm %></td>
-        <td> <%= link_to "View", controller: "arrests", action: "show", id: arrest.id %></td>
-      <% end %>
+        <td> <%= @arrest.name %></td>
+        <td> <%= @arrest.age %></td>
+        <td> <%= @arrest.charge_description %></td>
+        <td> <%= @arrest.firearm %></td>
+      <%# end %>
     </tr>
 </table>
 </html>
