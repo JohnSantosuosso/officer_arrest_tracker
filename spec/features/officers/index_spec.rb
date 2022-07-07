@@ -13,6 +13,10 @@ RSpec.describe 'it shows all officers in system' do
     visit "/officers"
   end
 
+  # within('header') do
+  #   expect(page).to have_content('Officers')
+  # end
+
   it 'links to the arrests index at the top of every page' do
 
     expect(page).to have_content("Arrests")
@@ -58,3 +62,12 @@ RSpec.describe 'it shows all officers in system' do
   end
 
 end
+
+
+
+# [x] done
+# User Story 1, Parent Index 
+# For each parent table
+# As a visitor
+# When I visit '/parents'
+# Then I see the name of each parent record in the system
