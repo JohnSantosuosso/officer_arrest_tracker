@@ -35,8 +35,10 @@
         <td> <%= arrest.age %></td>
         <td> <%= arrest.charge_description %></td>
         <td> <%= arrest.firearm %></td>
-        <td> <%= link_to "View", controller: "arrests", action: "show", id: arrest.id %></td>
+        <td> <%= link_to "View #{arrest.name} ", controller: "arrests", action: "show", id: arrest.id %></td>
       <% end %>
     </tr>
 </table>
 </html>
+
+
