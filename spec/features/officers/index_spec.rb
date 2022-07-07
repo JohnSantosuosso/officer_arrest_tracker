@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'it shows all officers in system' do
   before do
-    @officer_1 = Officer.create!(id: 1, name: "Zac Brown", badge_number: 23884, under_investigation: true)
-    @officer_2 = Officer.create!(id: 2, name: "Mike Davis", badge_number: 22342, under_investigation: false)
+    @officer_1 = Officer.create!(id: 1, name: "Zac Brown", badge_number: 23884, under_investigation: true, created_at: "2022-07-04 04:08:24 UTC", updated_at: "2022-07-05 04:08:24 UTC")
+    @officer_2 = Officer.create!(id: 2, name: "Mike Davis", badge_number: 22342, under_investigation: false, created_at: "2022-07-02 04:08:24 UTC", updated_at: "2022-07-03 04:08:24 UTC")
 
     visit "/officers"
   end
@@ -11,6 +11,8 @@ RSpec.describe 'it shows all officers in system' do
   # within('header') do
   #   expect(page).to have_content('Officers')
   # end
+
+  #add test for order of officers sorted by added
 
   it 'links to the arrests index at the top of every page' do
 
@@ -28,10 +30,22 @@ RSpec.describe 'it shows all officers in system' do
     expect(current_path).to eql("/officers")
   end
 
-  it 'displays officer names' do
+  it 'displays officer names sorted by most recently created' do
 
     expect(page).to have_content("#{@officer_1.name}")
+    expect(page).to have_content("#{@officer_1.created_at}")
     expect(page).to have_content("#{@officer_2.name}")
+    expect(page).to have_content("#{@officer_2.created_at}")
+  end
+
+  xit 'displays officers in order by most recently created' do
+
+    expect(page).to have_content("#{@officer_1.name}")
+    expect(page).to have_content("#{@officer_1.created_at}")
+    expect(page).to have_content("#{@officer_1.updated_at}")
+    expect(page).to have_content("#{@officer_2.name}")
+    expect(page).to have_content("#{@officer_2.created_at}")
+    expect(page).to have_content("#{@officer_2.updated_at}")
   end
 
   it 'clicks on officer name to open the officers page' do
@@ -66,3 +80,9 @@ end
 # As a visitor
 # When I visit '/parents'
 # Then I see the name of each parent record in the system
+# [x] done
+# User Story 6, Parent Index sorted by Most Recently Created 
+# As a visitor
+# When I visit the parent index,
+# I see that records are ordered by most recently created first
+# And next to each of the records I see when it was created

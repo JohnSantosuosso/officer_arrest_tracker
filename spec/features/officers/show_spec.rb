@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'it shows information on an officer based on id' do
   before do
     @officer_1 = Officer.create!(id: 1, name: "Zac Brown", badge_number: 23884, under_investigation: true, created_at: "2022-07-04 04:08:24 UTC", updated_at: "2022-07-06 04:08:24 UTC")
-    @officer_2 = Officer.create!(id: 2, name: "Mike Davis", badge_number: 22342, under_investigation: false)
+    @officer_2 = Officer.create!(id: 2, name: "Mike Davis", badge_number: 22342, under_investigation: false, created_at: "2022-07-06 04:08:24 UTC", updated_at: "2022-07-07 04:08:24 UTC")
 
     visit "/officers/#{@officer_1.id}"
   end

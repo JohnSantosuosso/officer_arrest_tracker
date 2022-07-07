@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-07T14:07:33-04:00">2022-07-07T14:07:33-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-07T14:24:00-04:00">2022-07-07T14:24:00-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="green">
-  98.0%
+  95.22%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.41
+         1.36
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>200</b> relevant lines,
-    <span class="green"><b>196</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed. </span>
+    <b>209</b> relevant lines,
+    <span class="green"><b>199</b> lines covered</span> and
+    <span class="red"><b>10</b> lines missed. </span>
     (<span class="green">
-  98.0%
+  95.22%
 </span>
 )
   </div>
@@ -347,12 +347,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#ff45297ed40e06f1094715764ac4d3d3174b9e98" class="src_link" title="spec/features/officers/index_spec.rb">spec/features/officers/index_spec.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">68</td>
-            <td class="cell--number">29</td>
-            <td class="cell--number">29</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.41</td>
+            <td class="yellow strong cell--number t-file__coverage">84.21 %</td>
+            <td class="cell--number">88</td>
+            <td class="cell--number">38</td>
+            <td class="cell--number">32</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">1.16</td>
             
           </tr>
         
@@ -5123,8 +5123,8 @@
   <div class="header">
     <h3>spec/features/officers/index_spec.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  84.21%
 </span>
 
       lines covered
@@ -5133,9 +5133,9 @@
     
 
     <div class="t-line-summary">
-      <b>29</b> relevant lines.
-      <span class="green"><b>29</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>38</b> relevant lines.
+      <span class="green"><b>32</b> lines covered</span> and
+      <span class="red"><b>6</b> lines missed.</span>
     </div>
 
     
@@ -5196,7 +5196,7 @@
 
             
 
-            <code class="ruby">    @officer_1 = Officer.create!(id: 1, name: &quot;Zac Brown&quot;, badge_number: 23884, under_investigation: true)</code>
+            <code class="ruby">    @officer_1 = Officer.create!(id: 1, name: &quot;Zac Brown&quot;, badge_number: 23884, under_investigation: true, created_at: &quot;2022-07-04 04:08:24 UTC&quot;, updated_at: &quot;2022-07-05 04:08:24 UTC&quot;)</code>
           </li>
         </div>
       
@@ -5207,7 +5207,7 @@
 
             
 
-            <code class="ruby">    @officer_2 = Officer.create!(id: 2, name: &quot;Mike Davis&quot;, badge_number: 22342, under_investigation: false)</code>
+            <code class="ruby">    @officer_2 = Officer.create!(id: 2, name: &quot;Mike Davis&quot;, badge_number: 22342, under_investigation: false, created_at: &quot;2022-07-02 04:08:24 UTC&quot;, updated_at: &quot;2022-07-03 04:08:24 UTC&quot;)</code>
           </li>
         </div>
       
@@ -5300,13 +5300,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="15">
+            
             
 
             
 
-            <code class="ruby">  it &#39;links to the arrests index at the top of every page&#39; do</code>
+            <code class="ruby">  #add test for order of officers sorted by added</code>
           </li>
         </div>
       
@@ -5328,7 +5328,7 @@
 
             
 
-            <code class="ruby">    expect(page).to have_content(&quot;Arrests&quot;)</code>
+            <code class="ruby">  it &#39;links to the arrests index at the top of every page&#39; do</code>
           </li>
         </div>
       
@@ -5350,34 +5350,12 @@
 
             
 
-            <code class="ruby">    click_link (&#39;Arrests&#39;)</code>
+            <code class="ruby">    expect(page).to have_content(&quot;Arrests&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(current_path).to eql(&quot;/arrests&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -5388,13 +5366,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="23">
+          <li class="covered" data-hits="1" data-linenumber="21">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  it &#39;links to the officers index at the top of every page&#39; do</code>
+            <code class="ruby">    click_link (&#39;Arrests&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(current_path).to eql(&quot;/arrests&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -5416,7 +5416,7 @@
 
             
 
-            <code class="ruby">    expect(page).to have_content(&quot;Officers&quot;)</code>
+            <code class="ruby">  it &#39;links to the officers index at the top of every page&#39; do</code>
           </li>
         </div>
       
@@ -5438,34 +5438,12 @@
 
             
 
-            <code class="ruby">    click_link (&#39;Officers&#39;)</code>
+            <code class="ruby">    expect(page).to have_content(&quot;Officers&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="28">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(current_path).to eql(&quot;/officers&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="29">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="30">
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -5476,13 +5454,35 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="31">
+          <li class="covered" data-hits="1" data-linenumber="29">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  it &#39;displays officer names&#39; do</code>
+            <code class="ruby">    click_link (&#39;Officers&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="30">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(current_path).to eql(&quot;/officers&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -5504,40 +5504,40 @@
 
             
 
-            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_1.name}&quot;)</code>
+            <code class="ruby">  it &#39;displays officer names sorted by most recently created&#39; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="34">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_2.name}&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="35">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="36">
+          <li class="never" data-hits="" data-linenumber="34">
             
             
 
             
 
             <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="35">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_1.name}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="36">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_1.created_at}&quot;)</code>
           </li>
         </div>
       
@@ -5548,100 +5548,23 @@
 
             
 
-            <code class="ruby">  it &#39;clicks on officer name to open the officers page&#39; do</code>
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_2.name}&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="39">
+          <li class="covered" data-hits="1" data-linenumber="38">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    click_link (&quot;#{@officer_1.name}&quot;)</code>
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_2.created_at}&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="40">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(current_path).to eql(&quot;/officers/#{@officer_1.id}&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="41">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="42">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    visit &quot;/officers&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="43">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="44">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    click_link (&quot;#{@officer_2.name}&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="45">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    expect(current_path).to eql(&quot;/officers/#{@officer_2.id}&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="46">
+          <li class="never" data-hits="" data-linenumber="39">
             
             
 
@@ -5652,7 +5575,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="47">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -5663,13 +5586,90 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="48">
+          <li class="covered" data-hits="1" data-linenumber="41">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  it &#39;clicks Update Officer link to update an officer by ID&#39; do</code>
+            <code class="ruby">  xit &#39;displays officers in order by most recently created&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="42">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="43">
+            
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_1.name}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="44">
+            
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_1.created_at}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="45">
+            
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_1.updated_at}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="46">
+            
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_2.name}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="47">
+            
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_2.created_at}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="48">
+            
+            
+
+            
+
+            <code class="ruby">    expect(page).to have_content(&quot;#{@officer_2.updated_at}&quot;)</code>
           </li>
         </div>
       
@@ -5680,18 +5680,18 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="50">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="50">
+            
             
 
             
 
-            <code class="ruby">    click_link (&quot;Update #{@officer_1.name}&quot;)</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -5702,7 +5702,7 @@
 
             
 
-            <code class="ruby">    expect(current_path).to eql(&quot;/officers/#{@officer_1.id}/edit&quot;)</code>
+            <code class="ruby">  it &#39;clicks on officer name to open the officers page&#39; do</code>
           </li>
         </div>
       
@@ -5724,29 +5724,29 @@
 
             
 
-            <code class="ruby">    visit &quot;/officers&quot;</code>
+            <code class="ruby">    click_link (&quot;#{@officer_1.name}&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="54">
+          <li class="covered" data-hits="1" data-linenumber="54">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(current_path).to eql(&quot;/officers/#{@officer_1.id}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="55">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="55">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    click_link (&quot;Update #{@officer_2.name}&quot;)</code>
           </li>
         </div>
       
@@ -5757,7 +5757,7 @@
 
             
 
-            <code class="ruby">    expect(current_path).to eql(&quot;/officers/#{@officer_2.id}/edit&quot;)</code>
+            <code class="ruby">    visit &quot;/officers&quot;</code>
           </li>
         </div>
       
@@ -5768,29 +5768,29 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="58">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="59">
+          <li class="covered" data-hits="1" data-linenumber="58">
+            <span class="hits">1</span>
             
+
+            
+
+            <code class="ruby">    click_link (&quot;#{@officer_2.name}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="59">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">    expect(current_path).to eql(&quot;/officers/#{@officer_2.id}&quot;)</code>
           </li>
         </div>
       
@@ -5801,7 +5801,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -5817,13 +5817,13 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="62">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="62">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"></code>
+            
+
+            <code class="ruby">  it &#39;clicks Update Officer link to update an officer by ID&#39; do</code>
           </li>
         </div>
       
@@ -5834,29 +5834,29 @@
 
             
 
-            <code class="ruby"># [x] done</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="64">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="64">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"># User Story 1, Parent Index </code>
+            
+
+            <code class="ruby">    click_link (&quot;Update #{@officer_1.name}&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="65">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="65">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"># For each parent table</code>
+            
+
+            <code class="ruby">    expect(current_path).to eql(&quot;/officers/#{@officer_1.id}/edit&quot;)</code>
           </li>
         </div>
       
@@ -5867,18 +5867,18 @@
 
             
 
-            <code class="ruby"># As a visitor</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="67">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="67">
+            <span class="hits">1</span>
             
 
-            <code class="ruby"># When I visit &#39;/parents&#39;</code>
+            
+
+            <code class="ruby">    visit &quot;/officers&quot;</code>
           </li>
         </div>
       
@@ -5889,7 +5889,227 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="69">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    click_link (&quot;Update #{@officer_2.name}&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="70">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(current_path).to eql(&quot;/officers/#{@officer_2.id}/edit&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="71">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="72">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="73">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="74">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="75">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="76">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="77">
+            
+            
+
+            
+
+            <code class="ruby"># [x] done</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="78">
+            
+            
+
+            
+
+            <code class="ruby"># User Story 1, Parent Index </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="79">
+            
+            
+
+            
+
+            <code class="ruby"># For each parent table</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="80">
+            
+            
+
+            
+
+            <code class="ruby"># As a visitor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="81">
+            
+            
+
+            
+
+            <code class="ruby"># When I visit &#39;/parents&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="82">
+            
+            
+
+            
+
             <code class="ruby"># Then I see the name of each parent record in the system</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="83">
+            
+            
+
+            
+
+            <code class="ruby"># [x] done</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="84">
+            
+            
+
+            
+
+            <code class="ruby"># User Story 6, Parent Index sorted by Most Recently Created </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="85">
+            
+            
+
+            
+
+            <code class="ruby"># As a visitor</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="86">
+            
+            
+
+            
+
+            <code class="ruby"># When I visit the parent index,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="87">
+            
+            
+
+            
+
+            <code class="ruby"># I see that records are ordered by most recently created first</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="88">
+            
+            
+
+            
+
+            <code class="ruby"># And next to each of the records I see when it was created</code>
           </li>
         </div>
       
@@ -5986,7 +6206,7 @@
 
             
 
-            <code class="ruby">    @officer_2 = Officer.create!(id: 2, name: &quot;Mike Davis&quot;, badge_number: 22342, under_investigation: false)</code>
+            <code class="ruby">    @officer_2 = Officer.create!(id: 2, name: &quot;Mike Davis&quot;, badge_number: 22342, under_investigation: false, created_at: &quot;2022-07-06 04:08:24 UTC&quot;, updated_at: &quot;2022-07-07 04:08:24 UTC&quot;)</code>
           </li>
         </div>
       
