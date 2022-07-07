@@ -15,17 +15,13 @@ RSpec.describe 'it shows all officers in system' do
   #add test for order of officers sorted by added
 
   it 'links to the arrests index at the top of every page' do
-
     expect(page).to have_content("Arrests")
-
     click_link ('Arrests')
     expect(current_path).to eql("/arrests")
   end
 
   it 'links to the officers index at the top of every page' do
-
     expect(page).to have_content("Officers")
-
     click_link ('Officers')
     expect(current_path).to eql("/officers")
   end

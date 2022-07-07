@@ -45,7 +45,7 @@ end
 # Then I see the parent with that id including the parent's attributes:
 # - data from each column that is on the parent table
 
-# [] done
+# [x] done
 # User Story 10, Parent Child Index Link
 # As a visitor
 # When I visit a parent show page ('/parents/:id')
