@@ -9,6 +9,18 @@ RSpec.describe 'it shows information on a specific arrest' do
     visit "arrests/#{@arrest_1.id}"
   end
 
+  it 'links to the arrests index at the top of every page' do
+    expect(page).to have_content("Arrests")
+    click_link ('Arrests')
+    expect(current_path).to eql("/arrests")
+  end
+
+  it 'links to the officers index at the top of every page' do
+    expect(page).to have_content("Officers")
+    click_link ('Officers')
+    expect(current_path).to eql("/officers")
+  end
+
   it 'holds the arrestees attributes' do
     expect(page).to have_no_content("#{@arrest_2.name}")
     expect(page).to have_content("#{@arrest_1.age}")

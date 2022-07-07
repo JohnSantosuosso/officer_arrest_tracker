@@ -14,27 +14,27 @@ RSpec.describe "officer arrests index page" do
     visit "/officers/#{@officer_1.id}/arrests"
   end
 
+  it 'links to the arrests index at the top of every page' do
+    expect(page).to have_content("Arrests")
+    click_link ('Arrests')
+    expect(current_path).to eql("/arrests")
+  end
+
+  it 'links to the officers index at the top of every page' do
+    expect(page).to have_content("Officers")
+    click_link ('Officers')
+    expect(current_path).to eql("/officers")
+  end
+
   it 'shows all of the arrests for the officer' do
 
     expect(page).to have_content(@arrest_1.name)
     expect(page).to have_content(@arrest_2.name)
   end
 
-  it "links to each songs show page" do
-
+  it "links to an arrests show page" do
     click_on(@arrest_1.name) #click on is capybara method
     expect(current_path).to eql("/arrests/#{@arrest_1.id}") #current path is capybara method
-  end
-
-  xit "shows the average song length for the artist" do
-    prince = Artist.create!(name: 'Prince')
-    purple = prince.songs.create!(title: 'Purple Rain', length: 834, play_count: 8934)
-    beret = prince.songs.create!(title: 'Raspberry Beret', length: 934, play_count: 930)
-
-    visit "/artists/#{prince.id}/songs"
-
-    expect(page).to have_content("Average Song Length for Prince: 884")
-
   end
 
 
