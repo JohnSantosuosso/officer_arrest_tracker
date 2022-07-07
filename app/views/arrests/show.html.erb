@@ -28,13 +28,14 @@
       <th>Arrest Category</th>
       <th>Firearm Recovered?</th>
     </tr>
-      <%= #@arrest.each do |arrest| %>
         <tr>
         <td> <%= @arrest.name %></td>
         <td> <%= @arrest.age %></td>
         <td> <%= @arrest.charge_description %></td>
         <td> <%= @arrest.firearm %></td>
-      <%# end %>
     </tr>
 </table>
+<br>
+<p><b>Record created: </b><%= @arrest.created_at %></p>
+<p><b>Record updated: </b><%= @arrest.updated_at %></p>
 </html>
