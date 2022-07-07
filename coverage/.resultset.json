@@ -294,11 +294,11 @@
           null,
           1,
           1,
+          4,
+          null,
+          null,
+          1,
           0,
-          null,
-          null,
-          1,
-          1,
           null,
           null
         ]
@@ -308,8 +308,39 @@
           1,
           null
         ]
+      },
+      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/officers_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1657164447
+    "timestamp": 1657216682
   }
 }

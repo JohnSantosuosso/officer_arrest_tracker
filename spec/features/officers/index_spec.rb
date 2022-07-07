@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'it shows all officers in system' do
   before do
-    officer_1 = Officer.create!(id: 1, name: "Zac Brown", badge_number: 23884, under_investigation: true)
-    officer_2 = Officer.create!(id: 2, name: "Mike Davis", badge_number: 22342, under_investigation: false)
+    @officer_1 = Officer.create!(id: 1, name: "Zac Brown", badge_number: 23884, under_investigation: true)
+    @officer_2 = Officer.create!(id: 2, name: "Mike Davis", badge_number: 22342, under_investigation: false)
 
     visit "/officers"
   end
@@ -30,30 +30,30 @@ RSpec.describe 'it shows all officers in system' do
 
   it 'displays officer names' do
 
-    expect(page).to have_content("Zac Brown")
-    expect(page).to have_content("Mike Davis")
+    expect(page).to have_content("#{@officer_1.name}")
+    expect(page).to have_content("#{@officer_2.name}")
   end
 
   it 'clicks on officer name to open the officers page' do
 
-    click_link ('Zac Brown')
-    expect(current_path).to eql("/officers/1")
+    click_link ("#{@officer_1.name}")
+    expect(current_path).to eql("/officers/#{@officer_1.id}")
 
     visit "/officers"
 
-    click_link ('Mike Davis')
-    expect(current_path).to eql("/officers/2")
+    click_link ("#{@officer_2.name}")
+    expect(current_path).to eql("/officers/#{@officer_2.id}")
   end
 
   it 'clicks Update Officer link to update an officer by ID' do
 
-    click_link ('Update Zac Brown')
-    expect(current_path).to eql("/officers/1/edit")
+    click_link ("Update #{@officer_1.name}")
+    expect(current_path).to eql("/officers/#{@officer_1.id}/edit")
 
     visit "/officers"
 
-    click_link ('Update Mike Davis')
-    expect(current_path).to eql("/officers/2/edit")
+    click_link ("Update #{@officer_2.name}")
+    expect(current_path).to eql("/officers/#{@officer_2.id}/edit")
   end
 
 end

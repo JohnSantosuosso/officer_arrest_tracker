@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'it shows information on an officer based on id' do
   before do
-    officer_1 = Officer.create!(id: 1, name: "Zac Brown", badge_number: 23884, under_investigation: true, created_at: "2022-07-04 04:08:24 UTC", updated_at: "2022-07-06 04:08:24 UTC")
-    officer_2 = Officer.create!(id: 2, name: "Mike Davis", badge_number: 22342, under_investigation: false)
+    @officer_1 = Officer.create!(id: 1, name: "Zac Brown", badge_number: 23884, under_investigation: true, created_at: "2022-07-04 04:08:24 UTC", updated_at: "2022-07-06 04:08:24 UTC")
+    @officer_2 = Officer.create!(id: 2, name: "Mike Davis", badge_number: 22342, under_investigation: false)
 
-    visit "/officers/1"
+    visit "/officers/#{@officer_1.id}"
   end
 
   it 'links to the arrests index at the top of every page' do
@@ -21,18 +21,18 @@ RSpec.describe 'it shows information on an officer based on id' do
   end
 
   it 'holds the officers information' do
-    expect(page).to have_no_content("Mike Davis")
-    expect(page).to have_content("Zac Brown")
-    expect(page).to have_content("23884")
+    expect(page).to have_no_content("#{@officer_2.name}")
+    expect(page).to have_content("#{@officer_1.name}")
+    expect(page).to have_content("#{@officer_1.badge_number}")
     expect(page).to have_content("Yes")
-    expect(page).to have_content("2022-07-06 04:08:24 UTC")
-    expect(page).to have_content("2022-07-04 04:08:24 UTC")
+    expect(page).to have_content("#{@officer_1.created_at}")
+    expect(page).to have_content("#{@officer_1.updated_at}")
     #Total arrests is not included because it is tested in the model
 
     
     click_link ('View')
 
-    expect(current_path).to eql("/officers/1/arrests")
+    expect(current_path).to eql("/officers/#{@officer_1.id}/arrests")
   end
 
 end
