@@ -263,55 +263,6 @@
           null
         ]
       },
-      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/welcome_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/officers_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
       "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/models/officer.rb": {
         "lines": [
           1,
@@ -329,8 +280,36 @@
           1,
           null
         ]
+      },
+      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/models/arrest.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/arrests_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1657160027
+    "timestamp": 1657164447
   }
 }
