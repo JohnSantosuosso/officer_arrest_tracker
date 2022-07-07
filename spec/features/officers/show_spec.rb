@@ -30,7 +30,7 @@ RSpec.describe 'it shows information on an officer based on id' do
     #Total arrests is not included because it is tested in the model
 
     
-    click_link ('View')
+    click_link ("#{@officer_1.name} Arrests")
 
     expect(current_path).to eql("/officers/#{@officer_1.id}/arrests")
   end
@@ -44,3 +44,9 @@ end
 # When I visit '/parents/:id'
 # Then I see the parent with that id including the parent's attributes:
 # - data from each column that is on the parent table
+
+# [] done
+# User Story 10, Parent Child Index Link
+# As a visitor
+# When I visit a parent show page ('/parents/:id')
+# Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')

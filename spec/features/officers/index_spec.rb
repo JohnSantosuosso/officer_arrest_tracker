@@ -80,6 +80,7 @@ end
 # As a visitor
 # When I visit '/parents'
 # Then I see the name of each parent record in the system
+
 # [x] done
 # User Story 6, Parent Index sorted by Most Recently Created 
 # As a visitor
