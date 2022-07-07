@@ -1,7 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Officer, type: :model do
-  it {should have_many :arrests}
+  describe "relationships" do
+    it {should have_many :arrests}
+  end
+
+  describe "validations" do
+    it {should validate_presence_of :name}
+    it {should validate_presence_of :badge_number}
+    it {should allow_value(false).for(:under_investigation)}
+    it {should allow_value(true).for(:under_investigation)}
+  end
 
   describe 'instance methods' do
     describe '#count' do

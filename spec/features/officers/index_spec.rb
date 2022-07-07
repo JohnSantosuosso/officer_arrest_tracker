@@ -45,7 +45,6 @@ RSpec.describe 'it shows all officers in system' do
   end
 
   it 'clicks on officer name to open the officers page' do
-
     click_link ("#{@officer_1.name}")
     expect(current_path).to eql("/officers/#{@officer_1.id}")
 
@@ -56,7 +55,6 @@ RSpec.describe 'it shows all officers in system' do
   end
 
   it 'clicks Update Officer link to update an officer by ID' do
-
     click_link ("Update #{@officer_1.name}")
     expect(current_path).to eql("/officers/#{@officer_1.id}/edit")
 
@@ -64,6 +62,11 @@ RSpec.describe 'it shows all officers in system' do
 
     click_link ("Update #{@officer_2.name}")
     expect(current_path).to eql("/officers/#{@officer_2.id}/edit")
+  end
+
+  it 'has a New Officer link that opens a page to create a new officer' do
+    click_link ("New Officer")
+    expect(current_path).to eql("/officers/new")
   end
 
 end
