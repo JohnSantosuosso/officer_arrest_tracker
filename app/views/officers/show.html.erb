@@ -33,7 +33,7 @@
         <td><%= @officer.badge_number %></td>
         <td><%= @officer.under_investigation == true ? "Yes": "No" %></td>
         <td><%= @officer.count_arrests %></td>
-        <td><%= link_to "View", controller: "officer_arrests", action: "index", id: @officer.id %></td>
+        <td><%= link_to "#{@officer.name} Arrests", controller: "officer_arrests", action: "index", id: @officer.id %></td>
     </tr>
 </table>
 <br>

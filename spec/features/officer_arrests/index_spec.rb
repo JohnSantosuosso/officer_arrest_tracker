@@ -13,7 +13,6 @@ RSpec.describe "officer arrests index page" do
 
     visit "/officers/#{@officer_1.id}/arrests"
   end
-
   it 'links to the arrests index at the top of every page' do
     expect(page).to have_content("Arrests")
     click_link ('Arrests')
@@ -27,7 +26,6 @@ RSpec.describe "officer arrests index page" do
   end
 
   it 'shows all of the arrests for the officer' do
-
     expect(page).to have_content(@arrest_1.name)
     expect(page).to have_content(@arrest_2.name)
   end
@@ -36,8 +34,6 @@ RSpec.describe "officer arrests index page" do
     click_on(@arrest_1.name) #click on is capybara method
     expect(current_path).to eql("/arrests/#{@arrest_1.id}") #current path is capybara method
   end
-
-
 end
 
 

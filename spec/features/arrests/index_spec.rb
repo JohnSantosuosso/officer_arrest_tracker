@@ -50,8 +50,15 @@ RSpec.describe 'it shows all officers in system' do
     expect(page).to have_content("#{@arrest_1.updated_at}")
   end
 
-  xit 'opens a page containing a record on the arrested individual when link is opened' do
+  it 'clicks on arrestees name to open additional details on the arrestee page' do
 
+    click_link ("View #{@arrest_1.name}")
+    expect(current_path).to eql("/arrests/#{@arrest_1.id}")
+
+    visit "/arrests"
+
+    click_link ("View #{@arrest_2.name}")
+    expect(current_path).to eql("/arrests/#{@arrest_2.id}")
   end
 
   xit 'does not display arrested individuals attributes if they did not have a firearm on them' do
@@ -66,3 +73,9 @@ end
 # As a visitor
 # When I visit '/child_table_name'
 # Then I see each Child in the system including the Child's attributes:
+
+# [x] done
+# User Story 4, Child Show 
+# As a visitor
+# When I visit '/child_table_name/:id'
+# Then I see the child with that id including the child's attributes:

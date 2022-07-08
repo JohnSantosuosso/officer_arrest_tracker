@@ -5,12 +5,22 @@ class OfficersController < ApplicationController
     @officers = Officer.all.order(created_at: :desc)
   end
 
+  def new
+    
+  end
+
   def show
     @officer = Officer.find(params[:id])
   end
 
   def edit
     @officer = Officer.find(params[:id])
+  end
+  
+  def create
+    officer = Officer.new(officer_params)
+    officer.save
+    redirect_to '/officers'
   end
 
   def update
