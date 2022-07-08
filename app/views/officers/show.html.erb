@@ -39,4 +39,8 @@
 <br>
 <p><b>Record created: </b><%= @officer.created_at %></p>
 <p><b>Record updated: </b><%= @officer.updated_at %></p>
+<br>
+<br>
+<p><%= link_to "Update Officer", controller: "officers", action: "edit", id: @officer.id %></p>
+
 </html>

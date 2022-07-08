@@ -5,7 +5,7 @@ RSpec.describe 'it shows information on an officer based on id' do
     visit "/officers/new"
   end
 
-  it 'can create a new artist' do
+  it 'can create a new officer' do
   fill_in('Name', with: "John Smith")
   fill_in('Badge number', with: 34933)
   check('Under investigation')
