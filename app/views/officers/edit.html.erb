@@ -24,6 +24,8 @@
     <%= form_with url: "/officers/#{@officer.id}", method: 'patch', local: true do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
+    <%= form.label :badge_number %>
+    <%= form.text_field :badge_number %>
     <%= form.label :under_investigation %>
     <%= form.check_box :under_investigation %>
     <%= form.submit "Update Officer" %>

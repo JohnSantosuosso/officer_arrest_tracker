@@ -275,7 +275,7 @@
           1,
           null,
           1,
-          4,
+          1,
           null,
           null
         ]
@@ -301,17 +301,11 @@
           null,
           null,
           1,
-          4,
-          null,
-          null,
-          1,
           1,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          3,
           null,
           null,
           1,
@@ -320,26 +314,22 @@
           0,
           null,
           null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
           null,
           1,
           1,
-          0,
+          1,
           null,
           null
         ]
       },
       "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/models/arrest.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
           1,
           null
         ]
@@ -359,19 +349,17 @@
           null
         ]
       },
-      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/officer_arrests_controller.rb": {
+      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/models/arrest.rb": {
         "lines": [
-          null,
-          null,
-          1,
-          1,
           1,
           1,
           null,
+          1,
+          1,
           null
         ]
       }
     },
-    "timestamp": 1657254833
+    "timestamp": 1657305290
   }
 }

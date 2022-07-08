@@ -57,7 +57,7 @@ end
 # When I visit a parent show page ('/parents/:id')
 # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
 
-# [] done
+# [x] done
 # User Story 12, Parent Update 
 # As a visitor
 # When I visit a parent show page
