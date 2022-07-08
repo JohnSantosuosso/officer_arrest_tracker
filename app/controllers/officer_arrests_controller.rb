@@ -5,4 +5,8 @@ class OfficerArrestsController < ApplicationController
     @officer = Officer.find(params[:id])
     @arrests = @officer.arrests
   end
+
+  def new
+
+  end
 end
