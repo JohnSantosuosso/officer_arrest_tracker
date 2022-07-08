@@ -35,6 +35,12 @@ RSpec.describe 'it shows information on an officer based on id' do
     expect(current_path).to eql("/officers/#{@officer_1.id}/arrests")
   end
 
+  it 'links to a page to update the current officer' do
+    expect(page).to have_content("Update Officer")
+    click_link ('Update Officer')
+    expect(current_path).to eql("/officers/#{@officer_1.id}/edit")
+  end
+
 end
 
 
@@ -50,3 +56,17 @@ end
 # As a visitor
 # When I visit a parent show page ('/parents/:id')
 # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
+
+# [] done
+# User Story 12, Parent Update 
+# As a visitor
+# When I visit a parent show page
+# Then I see a link to update the parent "Update Parent"
+# When I click the link "Update Parent"
+
+# Then I am taken to '/parents/:id/edit' where I  see a form to edit the parent's attributes:
+# When I fill out the form with updated information
+# And I click the button to submit the form
+# Then a `PATCH` request is sent to '/parents/:id',
+# the parent's info is updated,
+# and I am redirected to the Parent's Show page where I see the parent's updated info
