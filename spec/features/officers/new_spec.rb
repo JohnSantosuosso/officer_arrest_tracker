@@ -5,6 +5,18 @@ RSpec.describe 'it shows information on an officer based on id' do
     visit "/officers/new"
   end
 
+  it 'can create a new artist' do
+  fill_in('Name', with: "John Smith")
+  fill_in('Badge number', with: 34933)
+  check('Under investigation')
+  click_button('Create Officer')
+
+  
+  expect(current_path).to eql("/officers")
+  expect(page).to have_content("John Smith")
+
+  end
+
 end
 
 # [ ] done

@@ -16,6 +16,12 @@ class OfficersController < ApplicationController
   def edit
     @officer = Officer.find(params[:id])
   end
+  
+  def create
+    officer = Officer.new(officer_params)
+    officer.save
+    redirect_to '/officers'
+  end
 
   def update
     officer = Officer.find(params[:id])

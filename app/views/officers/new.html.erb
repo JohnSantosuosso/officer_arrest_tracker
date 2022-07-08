@@ -22,10 +22,17 @@
       <h3>Baltimore Police Department Records</h3>
     </div>
     </div>
-  <%= form_with url: '/officers', method: 'post' do |form| %>
+
+
+
+<%= form_with url:'/officers', method: :post, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
-  <%= form.submit "Create Officer" %>
-  <% end %>
+  <%= form.label :badge_number %>
+  <%= form.text_field :badge_number %>
+  <%= form.label :under_investigation %>
+  <%= form.check_box :under_investigation %>
+  <%= form.submit 'Create Officer' %>
+<% end %>
 
 </html>
