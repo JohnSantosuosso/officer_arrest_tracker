@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get '/arrests/:id', to: 'arrests#show'
 
   get '/officers/:id/arrests', to: 'officer_arrests#index'
+  get '/officers/:id/arrests/new', to: 'officer_arrests#new'
 end
