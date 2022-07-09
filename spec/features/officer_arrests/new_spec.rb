@@ -6,6 +6,18 @@ RSpec.describe 'it shows information on an officer based on id' do
     visit "/officers/#{@officer_1.id}/arrests/new"
   end
 
+  it 'links to the arrests index at the top of every page' do
+    expect(page).to have_content("Arrests")
+    click_link ('Arrests')
+    expect(current_path).to eql("/arrests")
+  end
+
+  it 'links to the officers index at the top of every page' do
+    expect(page).to have_content("Officers")
+    click_link ('Officers')
+    expect(current_path).to eql("/officers")
+  end
+
   it 'can create a new arrest' do
   fill_in('Name', with: "Marcus Aurelias")
   fill_in('Age', with: 40)
@@ -16,6 +28,8 @@ RSpec.describe 'it shows information on an officer based on id' do
   
   expect(current_path).to eql("/officers/#{@officer_1.id}/arrests")
   expect(page).to have_content("Marcus Aurelias")
+  expect(page).to have_content("40")
+  expect(page).to have_content("Alcohol")
 
   end
 
@@ -23,7 +37,7 @@ end
 
 
 
-# [ ] done
+# [x] done
 # User Story 13, Parent Child Creation 
 # As a visitor
 # When I visit a Parent Childs Index page
