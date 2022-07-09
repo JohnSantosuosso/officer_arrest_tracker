@@ -3,10 +3,16 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   get '/officers', to: 'officers#index'
   get '/officers/new', to: 'officers#new'
+
   get '/officers/:id', to: 'officers#show'
   get '/officers/:id/edit', to: 'officers#edit'
 
+  get '/officers/:id/arrests', to: 'officer_arrests#index'
+  get '/officers/:id/arrests/new', to: 'officer_arrests#new'
+  post '/officers/:id/arrests', to: 'officer_arrests#create'
+
   post '/officers/', to: 'officers#create'
+
 
   patch '/officers/:id', to: 'officers#update'
 
@@ -14,5 +20,4 @@ Rails.application.routes.draw do
   get '/arrests', to: 'arrests#index'
   get '/arrests/:id', to: 'arrests#show'
 
-  get '/officers/:id/arrests', to: 'officer_arrests#index'
 end

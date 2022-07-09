@@ -36,7 +36,7 @@ RSpec.describe 'it shows information on an officer based on id' do
 end
 
 
-# [] done
+# [x] done
 # User Story 12, Parent Update 
 # As a visitor
 # When I visit a parent show page

@@ -34,6 +34,13 @@ RSpec.describe "officer arrests index page" do
     click_on(@arrest_1.name) #click on is capybara method
     expect(current_path).to eql("/arrests/#{@arrest_1.id}") #current path is capybara method
   end
+
+  it 'links to a page to create a new arrest associated with this officer' do
+    #save_and_open_page
+    expect(page).to have_content("Create Arrest")
+    click_link ("Create Arrest")
+    expect(current_path).to eql("/officers/#{@officer_1.id}/arrests/new")
+  end
 end
 
 

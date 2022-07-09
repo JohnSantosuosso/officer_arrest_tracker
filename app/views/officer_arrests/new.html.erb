@@ -3,7 +3,7 @@
   <head>
     <title> BPD Officer Records</title>
   </head>
-  <header>
+  <body>
   <nav class="navbar navbar-expand-sm bg-light justify-content-left">
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -14,8 +14,7 @@
     </li>
   </ul>
 </nav>
-  </header>
-  <body>
+
 <br>
     <div class="container">
     <div class = "text-white bg-primary">
@@ -23,14 +22,16 @@
     </div>
     </div>
 
-<%= form_with url:'/officers', method: :post, local: true do |form| %>
+  <%= form_with url: "/officers/#{@officer.id}/arrests", method: :post, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name %>
-  <%= form.label :badge_number %>
-  <%= form.text_field :badge_number %>
-  <%= form.label :under_investigation %>
-  <%= form.check_box :under_investigation %>
-  <%= form.submit 'Create Officer' %>
+  <%= form.label :age %>
+  <%= form.text_field :age %>
+  <%= form.label :charge_description %>
+  <%= form.text_field :charge_description %>
+  <%= form.label :firearm %>
+  <%= form.check_box :firearm %>
+  <%= form.button "Create Arrest", type: "submit" %>
 <% end %>
 
 </html>
