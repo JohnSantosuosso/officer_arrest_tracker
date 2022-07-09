@@ -72,6 +72,16 @@ RSpec.describe 'it shows all officers in system' do
     click_link ("View #{@arrest_2.name}")
     expect(current_path).to eql("/arrests/#{@arrest_2.id}")
   end
+
+  it 'clicks on edit name to open additional details on the arrestee page' do
+    click_link ("Edit #{@arrest_1.name}")
+    expect(current_path).to eql("/arrests/#{@arrest_1.id}/edit")
+
+    visit "/arrests"
+
+    click_link ("Edit #{@arrest_2.name}")
+    expect(current_path).to eql("/arrests/#{@arrest_2.id}/edit")
+  end
 end
 
 
