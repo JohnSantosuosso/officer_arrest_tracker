@@ -79,3 +79,13 @@ end
 # Then a `PATCH` request is sent to '/parents/:id',
 # the parent's info is updated,
 # and I am redirected to the Parent's Show page where I see the parent's updated info
+
+# [x] done
+# User Story 19, Parent Delete 
+# As a visitor
+# When I visit a parent show page
+# Then I see a link to delete the parent
+# When I click the link "Delete Parent"
+# Then a 'DELETE' request is sent to '/parents/:id',
+# the parent is deleted, and all child records are deleted
+# and I am redirected to the parent index page where I no longer see this parent

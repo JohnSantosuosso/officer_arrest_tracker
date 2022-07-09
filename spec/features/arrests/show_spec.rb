@@ -36,6 +36,16 @@ RSpec.describe 'it shows information on a specific arrest' do
     expect(current_path).to eql("/arrests/#{@arrest_1.id}/edit")
   end
 
+  it 'deletes the current arrest' do
+    @officer_3 = Officer.create!(id: 3, name: "Sean Connery", badge_number: 21324, under_investigation: true, created_at: "2022-04-06 04:08:24 UTC", updated_at: "2022-05-07 04:08:24 UTC")
+    @arrest_3 = Arrest.create!(id: 3, name: "The Hamburglar", age: 54, charge_description: "Theft", firearm: false, created_at: "2022-07-04 02:05:39 UTC", updated_at:"2022-07-04 02:06:36 UTC", officer_id: 3)
+    visit "/arrests/#{@arrest_3.id}"
+    page.should have_selector("input[type=submit][value='Delete Arrest']")
+    click_button ('Delete Arrest')
+    expect(current_path).to eql("/officers/#{@officer_3.id}/arrests")
+    expect(page).to have_no_content(@arrest_3.name)
+  end
+
 end
 
 #[x] done
@@ -44,7 +54,7 @@ end
 # When I visit '/child_table_name/:id'
 # Then I see the child with that id including the child's attributes:
 
-# [ ] done
+# [x] done
 # User Story 14, Child Update 
 # As a visitor
 # When I visit a Child Show page
@@ -55,3 +65,15 @@ end
 # Then a `PATCH` request is sent to '/child_table_name/:id',
 # the child's data is updated,
 # and I am redirected to the Child Show page where I see the Child's updated information
+
+
+
+# [x] done
+# User Story 20, Child Delete 
+# As a visitor
+# When I visit a child show page
+# Then I see a link to delete the child "Delete Child"
+# When I click the link
+# Then a 'DELETE' request is sent to '/child_table_name/:id',
+# the child is deleted,
+# and I am redirected to the child index page where I no longer see this child
