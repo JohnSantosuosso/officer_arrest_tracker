@@ -86,3 +86,11 @@ end
 # When I visit the parent index,
 # I see that records are ordered by most recently created first
 # And next to each of the records I see when it was created
+
+# [x] done
+# User Story 17, Parent Update From Parent Index Page 
+# As a visitor
+# When I visit the parent index page
+# Next to every parent, I see a link to edit that parent's info
+# When I click the link
+# I should be taken to that parents edit page where I can update its information just like in User Story 4
