@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/officers/:id', to: 'officers#show'
   get '/officers/:id/edit', to: 'officers#edit'
+ 
 
   get '/officers/:id/arrests', to: 'officer_arrests#index'
   get '/officers/:id/arrests/new', to: 'officer_arrests#new'
@@ -15,7 +16,7 @@ Rails.application.routes.draw do
 
 
   patch '/officers/:id', to: 'officers#update'
-
+  delete '/officers/:id', to: 'officers#destroy'
 
   get '/arrests', to: 'arrests#index'
   get '/arrests/:id', to: 'arrests#show'

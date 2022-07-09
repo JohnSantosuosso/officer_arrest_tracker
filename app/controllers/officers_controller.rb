@@ -29,6 +29,12 @@ class OfficersController < ApplicationController
     redirect_to action: 'show'
   end
 
+  def destroy
+    @officer = Officer.find(params[:id])
+    @officer.destroy
+    redirect_to '/officers'
+  end
+
 
 private
   def officer_params

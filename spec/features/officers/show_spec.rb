@@ -41,6 +41,15 @@ RSpec.describe 'it shows information on an officer based on id' do
     expect(current_path).to eql("/officers/#{@officer_1.id}/edit")
   end
 
+  it 'deletes the current officer' do
+    @officer_3 = Officer.create!(id: 3, name: "Sean Connery", badge_number: 21324, under_investigation: true, created_at: "2022-04-06 04:08:24 UTC", updated_at: "2022-05-07 04:08:24 UTC")
+    visit "/officers/#{@officer_3.id}"
+    page.should have_selector("input[type=submit][value='Delete Officer']")
+    click_button ('Delete Officer')
+    expect(current_path).to eql("/officers")
+    expect(page).to have_no_content(@officer_3.name)
+  end
+
 end
 
 
