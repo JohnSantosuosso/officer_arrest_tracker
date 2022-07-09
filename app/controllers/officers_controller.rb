@@ -26,7 +26,7 @@ class OfficersController < ApplicationController
   def update
     officer = Officer.find(params[:id])
     officer.update(officer_params)
-    redirect_to action: 'show' #updates and returns to updated user's show action
+    redirect_to action: 'show'
   end
 
 

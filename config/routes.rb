@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   get '/arrests', to: 'arrests#index'
   get '/arrests/:id', to: 'arrests#show'
   get '/arrests/:id/edit', to: 'arrests#edit'
+  patch '/arrests/:id', to: 'arrests#update'
 
 end

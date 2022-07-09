@@ -12,5 +12,16 @@ class ArrestsController < ApplicationController
   def edit
     @arrest = Arrest.find(params[:id])
   end
-  
+
+  def update
+    arrest = Arrest.find(params[:id])
+    arrest.update(arrest_params)
+    redirect_to action: 'show'
+  end
+
+private
+  def arrest_params
+    params.permit(:name, :age, :charge_description, :firearm)
+  end
+
 end
