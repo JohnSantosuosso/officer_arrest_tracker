@@ -8,4 +8,9 @@ class ArrestsController < ApplicationController
   def show
     @arrest = Arrest.find(params[:id])
   end
+
+  def edit
+    @arrest = Arrest.find(params[:id])
+  end
+  
 end

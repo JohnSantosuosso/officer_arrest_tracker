@@ -30,6 +30,12 @@ RSpec.describe 'it shows information on a specific arrest' do
     expect(page).to have_content("#{@arrest_1.updated_at}")
   end
 
+  it 'has a link to a page to update the current Arrest record' do
+    expect(page).to have_content("Update Arrest")
+    click_link ('Update Arrest')
+    expect(current_path).to eql("/arrests/#{@arrest_1.id}/edit")
+  end
+
 end
 
 #[x] done
@@ -37,3 +43,15 @@ end
 # As a visitor
 # When I visit '/child_table_name/:id'
 # Then I see the child with that id including the child's attributes:
+
+# [ ] done
+# User Story 14, Child Update 
+# As a visitor
+# When I visit a Child Show page
+# Then I see a link to update that Child "Update Child"
+# When I click the link
+# I am taken to '/child_table_name/:id/edit' where I see a form to edit the child's attributes:
+# When I click the button to submit the form "Update Child"
+# Then a `PATCH` request is sent to '/child_table_name/:id',
+# the child's data is updated,
+# and I am redirected to the Child Show page where I see the Child's updated information
