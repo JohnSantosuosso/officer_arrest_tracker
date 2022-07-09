@@ -45,6 +45,7 @@
       <td> <%= arrest.firearm %></td>
       <td> <%= arrest.created_at %></td>
       <td> <%= arrest.updated_at %></td>
+      <td> <%= link_to "Edit #{arrest.name}", controller: "arrests", action: "edit", id: arrest.id %></td>
       <td> <%= link_to "View #{arrest.name}", controller: "arrests", action: "show", id: arrest.id %></td>
       <% end %>
     </tr>
