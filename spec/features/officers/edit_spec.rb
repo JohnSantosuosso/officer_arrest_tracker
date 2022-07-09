@@ -20,7 +20,6 @@ RSpec.describe 'it shows information on an officer based on id' do
   end
 
   it 'can update an officers record' do
-  save_and_open_page
   fill_in('Name', with: "Frank Castle")
   fill_in('Badge number', with: 23233)
   check('Under investigation')
@@ -29,7 +28,8 @@ RSpec.describe 'it shows information on an officer based on id' do
   
   expect(current_path).to eql("/officers/#{@officer_2.id}")
   expect(page).to have_content("Frank Castle")
-
+  expect(page).to have_content("23233")
+  #add test for boolean
   end
 
 
