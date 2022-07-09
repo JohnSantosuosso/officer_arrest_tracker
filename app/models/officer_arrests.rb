@@ -1,0 +1,1 @@
+class Officer < ApplicationRecord

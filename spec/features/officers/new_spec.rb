@@ -19,7 +19,7 @@ RSpec.describe 'it shows information on an officer based on id' do
 
 end
 
-# [ ] done
+# [x] done
 # User Story 11, Parent Creation 
 # As a visitor
 # When I visit the Parent Index page

@@ -40,7 +40,7 @@
     </tr>
 </table>
 
-<p><%= link_to "Create Arrest", controller: "officer_arrests", action: "new", id: @officer.id %></p>
+<p><%= link_to "Create Arrest", "/officers/#{@officer.id}/arrests/new"  %></p>
 </html>
 
 

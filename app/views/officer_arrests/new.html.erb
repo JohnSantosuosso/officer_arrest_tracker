@@ -15,4 +15,23 @@
   </ul>
 </nav>
 
+<br>
+    <div class="container">
+    <div class = "text-white bg-primary">
+      <h3>Baltimore Police Department Records</h3>
+    </div>
+    </div>
+
+  <%= form_with url: "/officers/#{@officer.id}/arrests", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :age %>
+  <%= form.text_field :age %>
+  <%= form.label :charge_description %>
+  <%= form.text_field :charge_description %>
+  <%= form.label :firearm %>
+  <%= form.check_box :firearm %>
+  <%= form.button "Create Arrest", type: "submit" %>
+<% end %>
+
 </html>
