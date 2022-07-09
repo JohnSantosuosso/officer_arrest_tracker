@@ -3,4 +3,8 @@ class Arrest < ApplicationRecord
 
    validates_presence_of :name, :age, :charge_description
    validates :firearm, inclusion: [false, true]
+
+  def self.has_firearm
+    Arrest.where(firearm: true)
+  end
 end

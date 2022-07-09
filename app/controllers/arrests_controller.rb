@@ -2,7 +2,7 @@
 
 class ArrestsController < ApplicationController
   def index
-    @arrests = Arrest.all
+    @arrests = Arrest.has_firearm
   end
   
   def show
