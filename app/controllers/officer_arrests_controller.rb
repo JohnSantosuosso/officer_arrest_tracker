@@ -3,7 +3,12 @@
 class OfficerArrestsController < ApplicationController
   def index
     @officer = Officer.find(params[:id])
-    @arrests = @officer.arrests
+    #require 'pry'; binding.pry 
+    if params[:sort] == "alpha"
+      @arrests = @officer.arrests.alpha_ordered
+    else
+      @arrests = @officer.arrests
+    end
   end
 
   def new

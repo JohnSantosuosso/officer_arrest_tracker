@@ -7,4 +7,8 @@ class Arrest < ApplicationRecord
   def self.has_firearm
     Arrest.where(firearm: true)
   end
+
+  def self.alpha_ordered
+    order(:name)
+  end
 end

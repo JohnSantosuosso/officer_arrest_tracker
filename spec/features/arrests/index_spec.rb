@@ -64,7 +64,6 @@ RSpec.describe 'it shows all officers in system' do
   end
 
   it 'clicks on arrestees name to open additional details on the arrestee page' do
-
     click_link ("View #{@arrest_1.name}")
     expect(current_path).to eql("/arrests/#{@arrest_1.id}")
 
@@ -87,3 +86,9 @@ end
 # As a visitor
 # When I visit '/child_table_name/:id'
 # Then I see the child with that id including the child's attributes:
+
+# [x] done
+# User Story 15, Child Index only shows `true` Records 
+# As a visitor
+# When I visit the child index
+# Then I only see records where the boolean column is `true`

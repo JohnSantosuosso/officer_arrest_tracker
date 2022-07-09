@@ -1,1 +1,5 @@
-class Officer < ApplicationRecord
+class OfficerArrests < ApplicationRecord
+
+
+
+end
