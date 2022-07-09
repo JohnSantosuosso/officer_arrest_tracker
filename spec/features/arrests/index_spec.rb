@@ -5,7 +5,8 @@ RSpec.describe 'it shows all officers in system' do
   before do
     @officer_1 = Officer.create!(id: 1, name: "Zac Brown", badge_number: 23884, under_investigation: true)
     @arrest_1 = Arrest.create!(id: 1, name: "Ralph Waldo Emerson", age: 23, charge_description: "Alcohol", firearm: true, created_at:"2022-07-06 02:05:39 UTC", updated_at:"2022-07-06 02:05:39 UTC", officer_id: 1)
-    @arrest_2 = Arrest.create!(id: 2, name: "Steve Smith", age: 25, charge_description: "Drug", firearm: false, created_at: "2022-07-06 02:05:39 UTC", updated_at:"2022-07-06 02:06:36 UTC", officer_id: 1)
+    @arrest_2 = Arrest.create!(id: 2, name: "Steve Smith", age: 25, charge_description: "Drug", firearm: true, created_at: "2022-07-06 02:05:39 UTC", updated_at:"2022-07-06 02:06:36 UTC", officer_id: 1)
+    @arrest_3 = Arrest.create!(id: 3, name: "The Hamburglar", age: 54, charge_description: "Theft", firearm: false, created_at: "2022-07-04 02:05:39 UTC", updated_at:"2022-07-04 02:06:36 UTC", officer_id: 1)
 
     visit "/arrests"
   end
@@ -48,6 +49,18 @@ RSpec.describe 'it shows all officers in system' do
     expect(page).to have_content("#{@arrest_1.firearm}")
     expect(page).to have_content("#{@arrest_1.created_at}")
     expect(page).to have_content("#{@arrest_1.updated_at}")
+
+    expect(page).to have_content("#{@arrest_2.name}")
+    expect(page).to have_content("#{@arrest_2.age}")
+    expect(page).to have_content("#{@arrest_2.firearm}")
+    expect(page).to have_content("#{@arrest_2.created_at}")
+    expect(page).to have_content("#{@arrest_2.updated_at}")
+
+    expect(page).to have_no_content("#{@arrest_3.name}")
+    expect(page).to have_no_content("#{@arrest_3.age}")
+    expect(page).to have_no_content("#{@arrest_3.firearm}")
+    expect(page).to have_no_content("#{@arrest_3.created_at}")
+    expect(page).to have_no_content("#{@arrest_3.updated_at}")
   end
 
   it 'clicks on arrestees name to open additional details on the arrestee page' do
@@ -60,11 +73,6 @@ RSpec.describe 'it shows all officers in system' do
     click_link ("View #{@arrest_2.name}")
     expect(current_path).to eql("/arrests/#{@arrest_2.id}")
   end
-
-  xit 'does not display arrested individuals attributes if they did not have a firearm on them' do
-
-  end
-
 end
 
 
