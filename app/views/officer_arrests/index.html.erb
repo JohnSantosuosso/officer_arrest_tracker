@@ -21,6 +21,7 @@
     </div>
     </div>
     <center><h5>Officer Arrest Records: <%= @officer.name %></h5></center>
+<div id= "arrest_table">
 <table class="table table-bordered">
     <tr>
       <th>Name</th>
@@ -31,7 +32,7 @@
     </tr>
       <% @arrests.each do |arrest| %>
         <tr>
-        <td> <%= arrest.name %></td>
+        <td class= "arrest_name"> <%= arrest.name %></td>
         <td> <%= arrest.age %></td>
         <td> <%= arrest.charge_description %></td>
         <td> <%= arrest.firearm %></td>
@@ -39,8 +40,10 @@
       <% end %>
     </tr>
 </table>
-
+</div>
 <p><%= link_to "Create Arrest", "/officers/#{@officer.id}/arrests/new"  %></p>
+<br>
+<p><%= link_to "Sort Arrests Alphabetically", "/officers/#{@officer.id}/arrests?sort=alpha"%></p>
 </html>
 
 
