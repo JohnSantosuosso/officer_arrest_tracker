@@ -61,3 +61,11 @@ end
 # As a visitor
 # When I visit '/parents/:parent_id/child_table_name'
 # Then I see each Child that is associated with that Parent with each Child's attributes:
+
+# [x] done
+# User Story 16, Sort Parent's Children in Alphabetical Order by name 
+# As a visitor
+# When I visit the Parent's children Index Page
+# Then I see a link to sort children in alphabetical order
+# When I click on the link
+# I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
