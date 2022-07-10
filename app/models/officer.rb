@@ -1,5 +1,5 @@
 class Officer < ApplicationRecord
-  has_many :arrests
+  has_many :arrests, dependent: :destroy
 
    validates_presence_of :name, :badge_number
    validates :under_investigation, inclusion: [false, true]

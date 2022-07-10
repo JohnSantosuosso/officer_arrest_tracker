@@ -69,6 +69,14 @@ RSpec.describe 'it shows all officers in system' do
     expect(current_path).to eql("/officers/new")
   end
 
+  it 'has a delete link next to each officer that deletes that officer and returns to the index page' do
+    expect(page).to have_content("#{@officer_1.name}")
+    expect(page).to have_selector(:link_or_button, "Delete Officer #{@officer_1.name}")
+    click_on ("Delete Officer #{@officer_1.name}")
+    expect(current_path).to eql("/officers")
+    expect(page).to have_no_content("#{@officer_1.name}")
+  end
+
 end
 
 
