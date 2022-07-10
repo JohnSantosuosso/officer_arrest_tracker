@@ -42,7 +42,8 @@
 <p><%= link_to "Update Arrest", controller: "arrests", action: "edit", id: @arrest.id %></p>
 <br>
 <%= form_with url: "/arrests/#{@arrest.id}", method: 'delete', local: true do |form| %>
-<%= form.submit "Delete Arrest" %>
-<% end %>
+    <%= form.submit "Delete Arrest #{@arrest.name}" %>
+    <% end %>
+</form>
 
 </html>

@@ -27,22 +27,6 @@ RSpec.describe 'it shows all officers in system' do
   #   expect(page).to have_content('Officers')
   # end
 
-  it 'links to the arrests index at the top of every page' do
-    expect(page).to have_content("Arrests")
-
-    click_link ('Arrests')
-
-    expect(current_path).to eql("/arrests")
-  end
-
-  it 'links to the officers index at the top of every page' do
-    expect(page).to have_content("Officers")
-
-    click_link ('Officers')
-
-    expect(current_path).to eql("/officers")
-  end
-
   it 'displays arrested individuals attributes only if they had a firearm on them' do
     expect(page).to have_content("#{@arrest_1.name}")
     expect(page).to have_content("#{@arrest_1.age}")
@@ -82,6 +66,17 @@ RSpec.describe 'it shows all officers in system' do
     click_link ("Edit #{@arrest_2.name}")
     expect(current_path).to eql("/arrests/#{@arrest_2.id}/edit")
   end
+
+  it 'has a delete button next to each arrest that deletes that arrest and returns to the arrests index page' do
+    expect(page).to have_content("#{@arrest_1.name}")
+    expect(page).to have_selector(:link_or_button, "Delete Arrest #{@arrest_1.name}")
+    
+    click_on ("Delete Arrest #{@arrest_1.name}")
+    
+    expect(current_path).to eql("/arrests")
+    expect(page).to have_no_content("#{@arrest_1.name}")
+  end
+  
 end
 
 
