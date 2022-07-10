@@ -27,6 +27,7 @@
       <th>Officer Name</th>
       <th>Created at</th>
       <th>Edit</th>
+      <th>Delete</th>
     </tr>
 
       <% @officers.each do |officer| %>
@@ -34,6 +35,9 @@
         <td><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
         <td> <%= officer.created_at %></td>
         <td> <%= link_to "Update #{officer.name}", "/officers/#{officer.id}/edit" %> </td>
+        <td> <%= form_with url: "/officers/#{officer.id}", method: 'delete', local: true do |form| %>
+            <%= form.submit "Delete Officer #{officer.name}" %>
+            <% end %> </td>
       <% end %>
     </tr>
 </table>
