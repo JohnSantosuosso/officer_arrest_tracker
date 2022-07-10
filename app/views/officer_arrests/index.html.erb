@@ -41,6 +41,13 @@
     </tr>
 </table>
 </div>
+
+<%= form_tag("/officers/#{@officer.id}/arrests", method: "get") do %>
+    <%= label_tag :entered_age, "Find All Arrests Above Age Entered Below"  %><br>
+    <%= text_field_tag :entered_age %>
+    <%= submit_tag "Return Results" %>
+<% end %>
+
 <p><%= link_to "Create Arrest", "/officers/#{@officer.id}/arrests/new"  %></p>
 <br>
 <p><%= link_to "Sort Arrests Alphabetically", "/officers/#{@officer.id}/arrests?sort=alpha"%></p>

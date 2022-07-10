@@ -3,9 +3,10 @@
 class OfficerArrestsController < ApplicationController
   def index
     @officer = Officer.find(params[:id])
-    #require 'pry'; binding.pry 
     if params[:sort] == "alpha"
       @arrests = @officer.arrests.alpha_ordered
+    elsif params[:entered_age]
+      @arrests = @officer.arrests.age_threshold(params[:entered_age])
     else
       @arrests = @officer.arrests
     end

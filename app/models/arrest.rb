@@ -11,4 +11,8 @@ class Arrest < ApplicationRecord
   def self.alpha_ordered
     order(:name)
   end
+
+  def self.age_threshold(entered_age)
+    Arrest.where("age > ?", entered_age)
+  end
 end
