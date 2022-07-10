@@ -1,8 +1,3 @@
-#As a user
-#When I visit an Artist's Songs Index
-#Then I see the titles of all the Artist's Songs
-#And I see that each title is a link to the songs show page
-
 require 'rails_helper'
 
 RSpec.describe "officer arrests index page" do
@@ -50,6 +45,18 @@ RSpec.describe "officer arrests index page" do
       expect(page.all('.arrest_name')[0]).to have_content("Hamburglar")
       expect(page.all('.arrest_name')[1]).to have_content("Ralph Waldo Emerson")
     end
+  
+  end
+
+  it 'only displays records over a thresold' do
+    expect(page).to have_content("Find All Arrests Above Age Entered Below")
+    fill_in('entered_age', with: 24)
+    
+    click_button ("Return Result")
+
+    expect(current_path).to eql("/officers/#{@officer_1.id}/arrests")
+    expect(page).to have_content("Hamburglar")
+    expect(page).to have_no_content("Ralph Waldo Emerson")
   
   end
 
