@@ -33,7 +33,7 @@ RSpec.describe Officer, type: :model do
       @officer_2 = Officer.create!(name:"Mark Smith", badge_number: 23243, under_investigation: false, created_at: "2022-07-02 04:08:24 UTC", updated_at: "2022-07-03 04:08:24 UTC")
     end
     
-    it 'orders by ' do
+    it 'orders by most recently created' do
       in_order = Officer.created_at_desc
       expect(in_order).to eq([@officer_1, @officer_2])
     end

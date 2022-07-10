@@ -2,7 +2,7 @@
 
 class OfficersController < ApplicationController
   def index
-    @officers = Officer.all.order(created_at: :desc)
+    @officers = Officer.all.created_at_desc
   end
 
   def new

@@ -22,6 +22,7 @@
       <h3>Baltimore Police Department Records</h3>
     </div>
     </div>
+<div id='officer_table'>    
 <table class="table table-bordered">
     <tr>
       <th>Officer Name</th>
@@ -32,7 +33,7 @@
 
       <% @officers.each do |officer| %>
     <tr>
-        <td><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
+        <td class = "officer_name_link"><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
         <td> <%= officer.created_at %></td>
         <td> <%= link_to "Update #{officer.name}", "/officers/#{officer.id}/edit" %> </td>
         <td> <%= form_with url: "/officers/#{officer.id}", method: 'delete', local: true do |form| %>
@@ -41,5 +42,6 @@
       <% end %>
     </tr>
 </table>
+</div>
 <%= link_to "New Officer", "/officers/new" %>
 </html>
