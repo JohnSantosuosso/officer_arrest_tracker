@@ -7,4 +7,9 @@ class Officer < ApplicationRecord
   def count_arrests
     arrests.count
   end
+
+  def self.created_at_desc
+    order(created_at: :desc)
+  end
+  
 end
