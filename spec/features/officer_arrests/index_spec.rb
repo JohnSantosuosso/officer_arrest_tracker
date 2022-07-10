@@ -26,8 +26,10 @@ RSpec.describe "officer arrests index page" do
   end
 
   it "links to an arrests show page" do
+    within "#arrest_table" do
     click_on(@arrest_1.name)
     expect(current_path).to eql("/arrests/#{@arrest_1.id}")
+    end
   end
 
   it 'links to a page to create a new arrest associated with this officer' do
@@ -50,6 +52,7 @@ RSpec.describe "officer arrests index page" do
 
   it 'only displays records over a thresold' do
     expect(page).to have_content("Find All Arrests Above Age Entered Below")
+    
     fill_in('entered_age', with: 24)
     
     click_button ("Return Result")
@@ -57,7 +60,16 @@ RSpec.describe "officer arrests index page" do
     expect(current_path).to eql("/officers/#{@officer_1.id}/arrests")
     expect(page).to have_content("Hamburglar")
     expect(page).to have_no_content("Ralph Waldo Emerson")
-  
+  end
+
+  it 'has a delete button next to each arrest that deletes that arrest and returns to the arrests index page' do
+    expect(page).to have_content("#{@arrest_1.name}")
+    expect(page).to have_selector(:link_or_button, "Delete Arrest #{@arrest_1.name}")
+    
+    click_on ("Delete Arrest #{@arrest_1.name}")
+    
+    expect(current_path).to eql("/arrests")
+    expect(page).to have_no_content("#{@arrest_1.name}")
   end
 
 end

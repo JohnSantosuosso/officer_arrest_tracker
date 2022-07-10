@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get '/officers/:id/arrests', to: 'officer_arrests#index'
   get '/officers/:id/arrests/new', to: 'officer_arrests#new'
   post '/officers/:id/arrests', to: 'officer_arrests#create'
-
   post '/officers/', to: 'officers#create'
 
 
@@ -20,8 +19,8 @@ Rails.application.routes.draw do
 
   get '/arrests', to: 'arrests#index'
   get '/arrests/:id', to: 'arrests#show'
-  delete '/arrests/:id', to: 'arrests#destroy'
   get '/arrests/:id/edit', to: 'arrests#edit'
+  delete '/arrests/:id', to: 'arrests#destroy'
   patch '/arrests/:id', to: 'arrests#update'
 
 end

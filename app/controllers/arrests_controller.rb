@@ -20,10 +20,8 @@ class ArrestsController < ApplicationController
   end
 
   def destroy
-    @officer = Officer.find(params[:id])
-    @arrest = Arrest.find(params[:id])
-    @arrest.destroy
-    redirect_to "/officers/#{@officer.id}/arrests"
+    @arrest = Arrest.find(params[:id]).destroy
+    redirect_to "/arrests"
   end
 
 private

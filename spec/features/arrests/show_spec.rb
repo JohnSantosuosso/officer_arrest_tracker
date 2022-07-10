@@ -39,10 +39,15 @@ RSpec.describe 'it shows information on a specific arrest' do
   it 'deletes the current arrest' do
     @officer_3 = Officer.create!(id: 3, name: "Sean Connery", badge_number: 21324, under_investigation: true, created_at: "2022-04-06 04:08:24 UTC", updated_at: "2022-05-07 04:08:24 UTC")
     @arrest_3 = Arrest.create!(id: 3, name: "The Hamburglar", age: 54, charge_description: "Theft", firearm: false, created_at: "2022-07-04 02:05:39 UTC", updated_at:"2022-07-04 02:06:36 UTC", officer_id: 3)
+    
     visit "/arrests/#{@arrest_3.id}"
-    page.should have_selector("input[type=submit][value='Delete Arrest']")
-    click_button ('Delete Arrest')
-    expect(current_path).to eql("/officers/#{@officer_3.id}/arrests")
+    
+    expect(page).to have_content("#{@arrest_3.name}")
+    expect(page).to have_selector(:link_or_button, "Delete Arrest #{@arrest_3.name}")
+
+    click_on ("Delete Arrest #{@arrest_3.name}")
+
+    expect(current_path).to eql("/arrests")
     expect(page).to have_no_content(@arrest_3.name)
   end
 
