@@ -23,14 +23,13 @@ RSpec.describe 'it shows information on an officer based on id' do
   fill_in('Age', with: 40)
   fill_in('Charge description', with: 'Alcohol')
   check('firearm')
-  click_button('Create Arrest')
 
+  click_button('Create Arrest')
   
   expect(current_path).to eql("/officers/#{@officer_1.id}/arrests")
   expect(page).to have_content("Marcus Aurelias")
   expect(page).to have_content("40")
   expect(page).to have_content("Alcohol")
-
   end
 
 end

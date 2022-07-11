@@ -20,7 +20,7 @@ class OfficerArrestsController < ApplicationController
   def create
     @officer = Officer.find(params[:id])
     @arrests = @officer.arrests
-    @officer.arrests.create(arrest_params)
+    @officer.arrests.create!(arrest_params)
     redirect_to "/officers/#{@officer.id}/arrests"
   end
 

@@ -35,10 +35,8 @@
     <tr>
       <td class = "officer_name_link"><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
       <td> <%= officer.created_at %></td>
-      <td> <%= link_to "Update #{officer.name}", "/officers/#{officer.id}/edit" %> </td>
-      <td> <%= form_with url: "/officers/#{officer.id}", method: 'delete', local: true do |form| %>
-      <%= form.submit "Delete Officer #{officer.name}" %>
-      <% end %> </td>
+      <td> <%= button_to "Update #{officer.name}", "/officers/#{officer.id}/edit", method: :get %> </td>
+      <td> <%= button_to "Delete #{officer.name}", "/officers/#{officer.id}", method: :delete %></td>
       <% end %>
     </tr>
 </table>
@@ -46,8 +44,8 @@
 <br>
 <div id = "sort_by_arrests">
 <p class = "sort link" ><%= link_to "Sort Officers By Arrests(High to Low)", 
-"/officers?sort=alpha"%></p>
+"/officers?sort=arrest_count"%></p>
 </div>
 <br>
-<%= link_to "New Officer", "/officers/new" %>
+<%= button_to  "New Officer", "/officers/new", method: :get %>
 </html>
