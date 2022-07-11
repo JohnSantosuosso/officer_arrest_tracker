@@ -26,22 +26,18 @@ RSpec.describe 'it shows all officers in system' do
     expect(current_path).to eql("/officers")
   end
 
-  it 'displays officer names sorted by most recently created' do
-
+  it 'displays officers on the page' do
     expect(page).to have_content("#{@officer_1.name}")
     expect(page).to have_content("#{@officer_1.created_at}")
     expect(page).to have_content("#{@officer_2.name}")
     expect(page).to have_content("#{@officer_2.created_at}")
   end
 
-  xit 'displays officers in order by most recently created' do
-
-    expect(page).to have_content("#{@officer_1.name}")
-    expect(page).to have_content("#{@officer_1.created_at}")
-    expect(page).to have_content("#{@officer_1.updated_at}")
-    expect(page).to have_content("#{@officer_2.name}")
-    expect(page).to have_content("#{@officer_2.created_at}")
-    expect(page).to have_content("#{@officer_2.updated_at}")
+  it 'displays officers in order by most recently created' do
+    within "#officer_table" do
+      expect(page.all('.officer_name_link')[0]).to have_content("Zac Brown")
+      expect(page.all('.officer_name_link')[1]).to have_content("Mike Davis")
+    end
   end
 
   it 'clicks on officer name to open the officers page' do
