@@ -33,15 +33,21 @@
 
       <% @officers.each do |officer| %>
     <tr>
-        <td class = "officer_name_link"><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
-        <td> <%= officer.created_at %></td>
-        <td> <%= link_to "Update #{officer.name}", "/officers/#{officer.id}/edit" %> </td>
-        <td> <%= form_with url: "/officers/#{officer.id}", method: 'delete', local: true do |form| %>
-            <%= form.submit "Delete Officer #{officer.name}" %>
-            <% end %> </td>
+      <td class = "officer_name_link"><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
+      <td> <%= officer.created_at %></td>
+      <td> <%= link_to "Update #{officer.name}", "/officers/#{officer.id}/edit" %> </td>
+      <td> <%= form_with url: "/officers/#{officer.id}", method: 'delete', local: true do |form| %>
+      <%= form.submit "Delete Officer #{officer.name}" %>
+      <% end %> </td>
       <% end %>
     </tr>
 </table>
 </div>
+<br>
+<div id = "sort_by_arrests">
+<p class = "sort link" ><%= link_to "Sort Officers By Arrests(High to Low)", 
+"/officers?sort=alpha"%></p>
+</div>
+<br>
 <%= link_to "New Officer", "/officers/new" %>
 </html>
