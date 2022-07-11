@@ -5,7 +5,7 @@ class Arrest < ApplicationRecord
    validates :firearm, inclusion: [false, true]
 
   def self.has_firearm
-    Arrest.where(firearm: true)
+    where(firearm: true)
   end
 
   def self.alpha_ordered
