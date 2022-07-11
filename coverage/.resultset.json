@@ -283,11 +283,11 @@
           1,
           null,
           1,
-          2,
+          0,
           null,
           null,
           1,
-          12,
+          1,
           null,
           null,
           1,
@@ -314,7 +314,7 @@
           1,
           null,
           1,
-          1,
+          10,
           null,
           null,
           1,
@@ -327,17 +327,13 @@
           null
         ]
       },
-      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/officers_controller.rb": {
+      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/arrests_controller.rb": {
         "lines": [
           null,
           null,
           1,
           1,
-          12,
-          null,
-          null,
-          1,
-          null,
+          10,
           null,
           null,
           1,
@@ -355,21 +351,14 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          null,
-          null,
           1,
           1,
-          1,
-          1,
-          null,
           null,
           null,
           1,
           1,
           0,
+          null,
           null,
           null
         ]
@@ -380,7 +369,7 @@
           null
         ]
       },
-      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/arrests_controller.rb": {
+      "/Users/johnsantosuosso/officer_arrest_tracker/officer_arrest_tracker/app/controllers/officers_controller.rb": {
         "lines": [
           null,
           null,
@@ -390,6 +379,10 @@
           null,
           null,
           1,
+          null,
+          null,
+          null,
+          1,
           0,
           null,
           null,
@@ -406,17 +399,24 @@
           1,
           0,
           0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
           null,
           null,
           1,
           1,
           0,
-          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1657577177
+    "timestamp": 1657578140
   }
 }

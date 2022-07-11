@@ -2,7 +2,6 @@
 <html>
   <head>
     <title> BPD Officer Records</title>
-    
   </head>
   <body>
 <nav class="navbar navbar-expand-sm bg-light justify-content-left">
@@ -16,16 +15,13 @@
   </ul>
 </nav>
 <br>
-
-
-    <div class="container">
-    <div class = "text-white bg-primary">
-      <h3>Baltimore Police Department Records</h3>
-    </div>
-    </div>
-    <br>
+  <div class="container">
+  <div class = "text-white bg-primary">
+    <h3>Baltimore Police Department Records</h3>
+  </div>
+  </div>
+  <br>
 <left><h5>Arrests Involving Firearms Only</h5></left>
-
 <table class="table table-bordered">
     <tr>
       <th>Name</th>
@@ -47,11 +43,9 @@
       <td> <%= arrest.firearm %></td>
       <td> <%= arrest.created_at %></td>
       <td> <%= arrest.updated_at %></td>
-      <td> <%= link_to "Edit #{arrest.name}", controller: "arrests", action: "edit", id: arrest.id %></td>
-      <td> <%= link_to "View #{arrest.name}", controller: "arrests", action: "show", id: arrest.id %></td>
-      <td> <%= form_with url: "/arrests/#{arrest.id}", method: 'delete', local: true do |form| %>
-          <%= form.submit "Delete Arrest #{arrest.name}" %>
-          <% end %> </td>
+      <td> <%= button_to "Edit #{arrest.name}", "/arrests/#{arrest.id}/edit", method: :get %></td>
+      <td> <%= button_to "View #{arrest.name}", "/arrests/#{arrest.id}", method: :get %></td>
+      <td> <%= button_to "Delete #{arrest.name}", "/arrests/#{arrest.id}", method: :delete %></td>
       <% end %>
     </tr>
 </table>

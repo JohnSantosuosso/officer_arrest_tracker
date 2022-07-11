@@ -16,14 +16,11 @@
   </ul>
 </nav>
 <br>
-
-
 <div class="container">
 <div class = "text-white bg-primary">
 <h3>Baltimore Police Department Records</h3>
 </div>
 </div>
-
     <%= form_with url: "/arrests/#{@arrest.id}", method: 'patch', local: true do |form| %>
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -35,8 +32,5 @@
     <%= form.check_box :firearm %>
     <%= form.submit "Update Arrest" %>
     <% end %>
-  
-
-
 </body>
 </html>

@@ -48,30 +48,30 @@ RSpec.describe 'it shows all officers in system' do
   end
 
   it 'clicks on arrestees name to open additional details on the arrestee page' do
-    click_link ("View #{@arrest_1.name}")
+    click_on ("View #{@arrest_1.name}")
     expect(current_path).to eql("/arrests/#{@arrest_1.id}")
 
     visit "/arrests"
 
-    click_link ("View #{@arrest_2.name}")
+    click_on ("View #{@arrest_2.name}")
     expect(current_path).to eql("/arrests/#{@arrest_2.id}")
   end
 
   it 'clicks on edit name to open additional details on the arrestee page' do
-    click_link ("Edit #{@arrest_1.name}")
+    click_on ("Edit #{@arrest_1.name}")
     expect(current_path).to eql("/arrests/#{@arrest_1.id}/edit")
 
     visit "/arrests"
 
-    click_link ("Edit #{@arrest_2.name}")
+    click_on ("Edit #{@arrest_2.name}")
     expect(current_path).to eql("/arrests/#{@arrest_2.id}/edit")
   end
 
   it 'has a delete button next to each arrest that deletes that arrest and returns to the arrests index page' do
     expect(page).to have_content("#{@arrest_1.name}")
-    expect(page).to have_selector(:link_or_button, "Delete Arrest #{@arrest_1.name}")
+    expect(page).to have_selector(:link_or_button, "Delete #{@arrest_1.name}")
     
-    click_on ("Delete Arrest #{@arrest_1.name}")
+    click_on ("Delete #{@arrest_1.name}")
     
     expect(current_path).to eql("/arrests")
     expect(page).to have_no_content("#{@arrest_1.name}")
