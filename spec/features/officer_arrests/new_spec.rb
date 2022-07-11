@@ -30,6 +30,7 @@ RSpec.describe 'it shows information on an officer based on id' do
   expect(page).to have_content("Marcus Aurelias")
   expect(page).to have_content("40")
   expect(page).to have_content("Alcohol")
+  expect(@officer_1.arrests.last[:name]).to eql("Marcus Aurelias")
   end
 
 end
