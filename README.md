@@ -4,19 +4,19 @@ This is a simple CRUD app created as the first project in Mod 2 using Rails and 
 
 * Ruby version:
 
-```ruby '2.7.4'```
+  ```ruby '2.7.4'```
 
 * System dependencies & Configuration:
 
-```bundle install```
+  ```bundle install```
 
 * Database creation & Database initialization:
 
-```rails db:{drop,create,migrate,seed}```
+  ```rails db:{drop,create,migrate,seed}```
 
 * How to run the test suite:
 
-```rspec spec```
+  ```rspec spec```
 
 * Deployment instructions:
 
