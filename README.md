@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple CRUD app created as the first project in Mod 2 using Rails and ActiveRecord.  The database is inspired by one of the greatest television shows of all time (opinion), 'The Wire'.
 
-Things you may want to cover:
+* Ruby version:
+```ruby '2.7.4'```
 
-* Ruby version
+* System dependencies & Configuration
+```bundle install```
 
-* System dependencies
+* Database creation & Database initialization:
+```rails db:{drop,create,migrate,seed}```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
+* How to run the test suite:
+```rspec spec```
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
-* ...
