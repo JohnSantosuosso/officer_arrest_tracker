@@ -10,12 +10,6 @@ RSpec.describe 'it shows all officers in system' do
     visit "/officers"
   end
 
-  # within('header') do
-  #   expect(page).to have_content('Officers')
-  # end
-
-  #add test for order of officers sorted by added
-
   it 'links to the arrests index at the top of every page' do
     expect(page).to have_content("Arrests")
     click_link ('Arrests')
@@ -77,7 +71,7 @@ RSpec.describe 'it shows all officers in system' do
     expect(page).to have_no_content("#{@officer_1.name}")
   end
 
-  xit 'has a button, that when clicked, sorts officers by number of arrests from highest to lowest' do
+  it 'has a link, that when clicked, sorts officers by number of arrests from highest to lowest' do
     @officer_3 = Officer.create!(id: 3, name: "Inspector Gadget", badge_number: 23233, under_investigation: false, created_at: "2022-07-02 04:08:24 UTC", updated_at: "2022-07-03 04:08:24 UTC")
     @arrest_3 = @officer_3.arrests.create!(id: 3, name: "Joker", age: 20, charge_description: "Theft", firearm: true, created_at:"2022-07-06 02:05:39 UTC", updated_at:"2022-07-06 02:05:39 UTC", officer_id: 3)
     
@@ -96,28 +90,22 @@ RSpec.describe 'it shows all officers in system' do
     end
   end
 
+  it 'has a link, that when clicked, sorts officers by number of arrests from highest to lowest' do
+    @officer_3 = Officer.create!(id: 3, name: "Inspector Gadget", badge_number: 23233, under_investigation: false, created_at: "2022-07-02 04:08:24 UTC", updated_at: "2022-07-03 04:08:24 UTC")
+    @arrest_3 = @officer_3.arrests.create!(id: 3, name: "Joker", age: 20, charge_description: "Theft", firearm: true, created_at:"2022-07-06 02:05:39 UTC", updated_at:"2022-07-06 02:05:39 UTC", officer_id: 3)
+    
+  within "#reset_sort" do
+    expect(page).to have_selector(:link_or_button, "Reset Sorted Officers")
+    end
+
+    click_on ("Reset Sorted Officers")
+    
+    expect(current_path).to eql("/officers")
+    
+    within "#officer_table" do
+      expect(page.all('.officer_name_link')[0]).to have_content("Zac Brown")
+      expect(page.all('.officer_name_link')[1]).to have_content("Mike Davis")
+      expect(page.all('.officer_name_link')[2]).to have_content("Inspector Gadget")
+    end
+  end
 end
-
-
-
-# [x] done
-# User Story 1, Parent Index 
-# For each parent table
-# As a visitor
-# When I visit '/parents'
-# Then I see the name of each parent record in the system
-
-# [x] done
-# User Story 6, Parent Index sorted by Most Recently Created 
-# As a visitor
-# When I visit the parent index,
-# I see that records are ordered by most recently created first
-# And next to each of the records I see when it was created
-
-# [x] done
-# User Story 17, Parent Update From Parent Index Page 
-# As a visitor
-# When I visit the parent index page
-# Next to every parent, I see a link to edit that parent's info
-# When I click the link
-# I should be taken to that parents edit page where I can update its information just like in User Story 4

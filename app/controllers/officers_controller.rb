@@ -3,6 +3,13 @@
 class OfficersController < ApplicationController
   def index
     @officers = Officer.all.created_at_desc
+    if params[:sort] == "arrest_count"
+      @officers = Officer.all.arrest_sort
+    elsif params[:sort] == "reset_sort"
+      @officers = Officer.all.created_at_desc
+    else
+      @officers = Officer.all.created_at_desc
+    end
   end
 
   def new
