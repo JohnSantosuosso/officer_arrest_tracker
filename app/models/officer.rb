@@ -13,7 +13,8 @@ class Officer < ApplicationRecord
   end
 
   def self.arrest_sort
-    #Officer.all.sort_by(&:count_arrests).reverse
+    Officer.all.sort_by(&:count_arrests).reverse
+    #check order
     #use &:method_name when referencing existing model method
   end
   

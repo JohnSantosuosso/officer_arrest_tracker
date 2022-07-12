@@ -24,9 +24,9 @@ class OfficersController < ApplicationController
   end
 
   def update
-    officer = Officer.find(params[:id])
-    officer.update(officer_params)
-    redirect_to action: 'show'
+    @officer = Officer.find(params[:id])
+    @officer.update(officer_params)
+    redirect_to "/officers/#{@officer.id}"
   end
 
   def destroy
