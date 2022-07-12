@@ -46,10 +46,10 @@
 </table>
 </div>
 
-<%= form_tag("/officers/#{@officer.id}/arrests", method: "get") do %>
-    <%= label_tag :entered_age, "Find All Arrests Above Age Entered Below"  %><br>
-    <%= text_field_tag :entered_age %>
-    <%= submit_tag "Return Results" %>
+<%= form_with url: "/officers/#{@officer.id}/arrests", method: :get, local: true do |form| %>
+    <%= form.label :entered_age, "Find All Arrests Above Age Entered Below"  %><br>
+    <%= form.text_field :entered_age %>
+    <%= form.button "Return Results", type: "submit" %>
 <% end %>
 
 <p><%= link_to "Create Arrest", "/officers/#{@officer.id}/arrests/new"  %></p>
