@@ -25,11 +25,34 @@ RSpec.describe "officer arrests index page" do
     expect(page).to have_content(@arrest_2.name)
   end
 
-  it "links to an arrests show page" do
+  it "has a button that takes you to page to edit an arrest" do
     within "#arrest_table" do
-    click_on(@arrest_1.name)
-    expect(current_path).to eql("/arrests/#{@arrest_1.id}")
+      expect(page).to have_selector(:link_or_button, "Edit #{@arrest_1.name}")
+      
+      click_on("Edit #{@arrest_1.name}")
+      
+      expect(current_path).to eql("/arrests/#{@arrest_1.id}/edit")
     end
+  end
+
+  it 'has a button that takes you to a page to view more information on an arrest' do
+    within "#arrest_table" do
+      expect(page).to have_selector(:link_or_button, "View #{@arrest_1.name}")
+
+      click_on("View #{@arrest_1.name}")
+
+      expect(current_path).to eql("/arrests/#{@arrest_1.id}")
+    end
+  end
+
+  it 'has a delete button next to each arrest that will delete that arrest and returns to the arrests index page' do
+    expect(page).to have_content("Delete #{@arrest_1.name}")
+    expect(page).to have_selector(:link_or_button, "Delete #{@arrest_1.name}")
+    
+    click_on ("Delete #{@arrest_1.name}")
+    
+    expect(current_path).to eql("/arrests")
+    expect(page).to have_no_content("#{@arrest_1.name}")
   end
 
   it 'links to a page to create a new arrest associated with this officer' do
@@ -61,17 +84,6 @@ RSpec.describe "officer arrests index page" do
     expect(page).to have_content("Hamburglar")
     expect(page).to have_no_content("Ralph Waldo Emerson")
   end
-
-  it 'has a delete button next to each arrest that deletes that arrest and returns to the arrests index page' do
-    expect(page).to have_content("#{@arrest_1.name}")
-    expect(page).to have_selector(:link_or_button, "Delete Arrest #{@arrest_1.name}")
-    
-    click_on ("Delete Arrest #{@arrest_1.name}")
-    
-    expect(current_path).to eql("/arrests")
-    expect(page).to have_no_content("#{@arrest_1.name}")
-  end
-
 end
 
 

@@ -29,25 +29,27 @@ RSpec.describe 'it shows information on an officer based on id' do
     expect(page).to have_content("#{@officer_1.updated_at}")
     #Total arrests is not included because it is tested in the model
 
-    
-    click_link ("#{@officer_1.name} Arrests")
+    click_on ("#{@officer_1.name} Arrests")
 
     expect(current_path).to eql("/officers/#{@officer_1.id}/arrests")
   end
 
   it 'links to a page to update the current officer' do
-    expect(page).to have_content("Update Officer")
-    click_link ('Update Officer')
+    click_button ('Update Officer')
+
     expect(current_path).to eql("/officers/#{@officer_1.id}/edit")
   end
 
   it 'deletes the current officer' do
     @officer_3 = Officer.create!(id: 3, name: "Sean Connery", badge_number: 21324, under_investigation: true, created_at: "2022-04-06 04:08:24 UTC", updated_at: "2022-05-07 04:08:24 UTC")
+
     visit "/officers/#{@officer_3.id}"
-    page.should have_selector("input[type=submit][value='Delete Officer']")
+
     click_button ('Delete Officer')
+
     expect(current_path).to eql("/officers")
     expect(page).to have_no_content(@officer_3.name)
+    expect(Officer.exists?(@officer_3.id)).to be(false) #tests to make sure it no longer exists
   end
 
 end

@@ -33,7 +33,7 @@
         <td><%= @officer.badge_number %></td>
         <td><%= @officer.under_investigation == true ? "Yes": "No" %></td>
         <td><%= @officer.count_arrests %></td>
-        <td><%= link_to "#{@officer.name} Arrests", controller: "officer_arrests", action: "index", id: @officer.id %></td>
+        <td><%= button_to "#{@officer.name} Arrests", "/officers/#{@officer.id}/arrests", method: :get %></td>
     </tr>
 </table>
 <br>
@@ -41,10 +41,8 @@
 <p><b>Record updated: </b><%= @officer.updated_at %></p>
 <br>
 <br>
-<p><%= link_to "Update Officer", controller: "officers", action: "edit", id: @officer.id %></p>
+<p><%= button_to "Update Officer", "/officers/#{@officer.id}/edit", method: :get %></p>
 <br>
-<%= form_with url: "/officers/#{@officer.id}", method: 'delete', local: true do |form| %>
-<%= form.submit "Delete Officer" %>
-<% end %>
+<p><%= button_to "Delete Officer", "/officers/#{@officer.id}", method: :delete %></p>
 
 </html>

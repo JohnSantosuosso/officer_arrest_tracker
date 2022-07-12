@@ -39,4 +39,18 @@ RSpec.describe Officer, type: :model do
     end
   end
 
+  describe '#arrest_sort' do
+    before :each do
+      @officer_1 = Officer.create!(id: 1, name:"John Jones", badge_number: 42323, under_investigation: true, created_at: "2022-07-04 04:08:24 UTC", updated_at: "2022-07-05 04:08:24 UTC")
+      @officer_2 = Officer.create!(id: 2, name:"Mark Smith", badge_number: 23243, under_investigation: false, created_at: "2022-07-02 04:08:24 UTC", updated_at: "2022-07-03 04:08:24 UTC")
+      @arrest_1 = Arrest.create!(id: 1, name: "Ralph Waldo Emerson", age: 23, charge_description: "Alcohol", firearm: true, created_at:"2022-07-06 02:05:39 UTC", updated_at:"2022-07-06 02:05:39 UTC", officer_id: 2)
+      @arrest_2 = Arrest.create!(id: 2, name: "Hamburglar", age: 25, charge_description: "Drug", firearm: false, created_at: "2022-07-06 02:05:39 UTC", updated_at:"2022-07-06 02:06:36 UTC", officer_id: 2)
+    end
+    
+    it 'orders by arrest count' do
+      expected_by_arrest_count = Officer.all.arrest_sort
+      expect(expected_by_arrest_count).to eq([@officer_2, @officer_1])
+    end
+  end
+
 end

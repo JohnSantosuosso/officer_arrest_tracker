@@ -31,8 +31,11 @@ RSpec.describe 'it shows information on a specific arrest' do
   end
 
   it 'has a link to a page to update the current Arrest record' do
-    expect(page).to have_content("Update Arrest")
-    click_link ('Update Arrest')
+  expect(page).to have_content("#{@arrest_1.name}")
+   expect(page).to have_selector(:link_or_button, "Edit #{@arrest_1.name}")
+
+    click_button ("Edit #{@arrest_1.name}")
+
     expect(current_path).to eql("/arrests/#{@arrest_1.id}/edit")
   end
 
@@ -43,9 +46,9 @@ RSpec.describe 'it shows information on a specific arrest' do
     visit "/arrests/#{@arrest_3.id}"
     
     expect(page).to have_content("#{@arrest_3.name}")
-    expect(page).to have_selector(:link_or_button, "Delete Arrest #{@arrest_3.name}")
+    expect(page).to have_selector(:link_or_button, "Delete #{@arrest_3.name}")
 
-    click_on ("Delete Arrest #{@arrest_3.name}")
+    click_on ("Delete #{@arrest_3.name}")
 
     expect(current_path).to eql("/arrests")
     expect(page).to have_no_content(@arrest_3.name)

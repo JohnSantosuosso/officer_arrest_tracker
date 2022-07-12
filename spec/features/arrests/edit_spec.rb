@@ -25,6 +25,7 @@ RSpec.describe 'it shows information on an officer based on id' do
   fill_in('Age', with: 85)
   fill_in('Charge description', with: "Obesity Promotion")
   check('Firearm')
+
   click_button('Update Arrest')
 
   

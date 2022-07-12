@@ -33,15 +33,24 @@
 
       <% @officers.each do |officer| %>
     <tr>
-        <td class = "officer_name_link"><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
-        <td> <%= officer.created_at %></td>
-        <td> <%= link_to "Update #{officer.name}", "/officers/#{officer.id}/edit" %> </td>
-        <td> <%= form_with url: "/officers/#{officer.id}", method: 'delete', local: true do |form| %>
-            <%= form.submit "Delete Officer #{officer.name}" %>
-            <% end %> </td>
+      <td class = "officer_name_link"><%= link_to officer.name, "/officers/#{officer.id}" %> </td>
+      <td> <%= officer.created_at %></td>
+      <td> <%= button_to "Update #{officer.name}", "/officers/#{officer.id}/edit", method: :get %> </td>
+      <td> <%= button_to "Delete #{officer.name}", "/officers/#{officer.id}", method: :delete %></td>
       <% end %>
     </tr>
 </table>
 </div>
-<%= link_to "New Officer", "/officers/new" %>
+<br>
+<div id = "sort_by_arrests">
+<p class = "arrest sort" ><%= link_to "Sort Officers By Arrests(High to Low)", 
+"/officers?sort=arrest_count"%></p>
+</div>
+<br>
+<div id = "reset_sort">
+<p class = "reset sorted" ><%= link_to "Reset Sorted Officers", 
+"/officers?sort=reset"%></p>
+</div>
+<br>
+<%= button_to  "New Officer", "/officers/new", method: :get %>
 </html>

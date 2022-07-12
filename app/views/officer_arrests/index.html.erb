@@ -28,6 +28,7 @@
       <th>Age</th>
       <th>Arrest Category</th>
       <th>Firearm Recovered?</th>
+      <th>Edit</th>
       <th>View</th>
       <th>Delete</th>
     </tr>
@@ -37,10 +38,9 @@
         <td> <%= arrest.age %></td>
         <td> <%= arrest.charge_description %></td>
         <td> <%= arrest.firearm %></td>
-        <td> <%= link_to "#{arrest.name} ", controller: "arrests", action: "show", id: arrest.id %></td>
-        <td> <%= form_with url: "/arrests/#{arrest.id}", method: 'delete', local: true do |form| %>
-          <%= form.submit "Delete Arrest #{arrest.name}" %>
-          <% end %> </td>
+        <td> <%= button_to "Edit #{arrest.name}", "/arrests/#{arrest.id}/edit", method: :get %></td>
+        <td> <%= button_to "View #{arrest.name}", "/arrests/#{arrest.id}", method: :get %></td>
+        <td> <%= button_to "Delete #{arrest.name}", "/arrests/#{arrest.id}", method: :delete %></td>
       <% end %>
     </tr>
 </table>
