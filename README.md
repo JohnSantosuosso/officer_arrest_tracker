@@ -1,7 +1,6 @@
 # README
 
-This is a simple CRUD app created as the first project in Mod 2 using Rails and ActiveRecord.  The database is inspired by one of the greatest television shows of all time (opinion, obviously), 'The Wire'.
-
+This is a simple CRUD app created as the first project in Mod 2 using Rails and ActiveRecord.
 * Ruby version:
 
   ```ruby '2.7.4'```
