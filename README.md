@@ -14,13 +14,13 @@ To get started:
 
      ```/Users/your_user_name/your_folder  $cd officer_arrest_tracker ```
   
- 3.  **Clone the repository by first clicking on the code button and then copying the repository information (use SSH if you have setup a key)**
+ 3.  **Clone the repository by clicking on the code button on Github repo page. Then, copy the repo information using SSH. **
 
      ![183747041-40f47875-442e-4008-8d00-8c45bf2731fe](https://user-images.githubusercontent.com/95776577/183752233-c9130b38-ce16-4b4c-aeb4-fdf0d0d4a137.png)
 
 
   
- 4.  **Inside the recently created directory, git clone the recently copied repository information** 
+ 4.  **Inside the recently created directory, clone the recently copied repository information** 
 
       ```/Users/your_user_name/your_folder/officer_arrest_tracker main $git clone git@github.com:JohnSantosuosso/officer_arrest_tracker.git```
 
@@ -30,12 +30,13 @@ To get started:
 
  6.  **Reset and create & database:** 
 
-    ```rails db:{drop,create,migrate,seed}```
+     ```rails db:{drop,create,migrate,seed}```
 
  7.  **How to run the test suite:**
 
-    ```rspec spec```
+     ```rspec spec```
 
  8.  **Viewing instructions:**
 
-    Run ```rails s``` in terminal.  In your web browser, enter the URL ```localhost:3000``` and enter the site.
+     Run ```rails s``` in terminal.  
+     In your web browser, enter the URL ```localhost:3000``` and enter the site.
