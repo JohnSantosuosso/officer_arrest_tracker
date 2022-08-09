@@ -4,7 +4,7 @@ Officer Arrest Tracker is a simple CRUD app that utilizes MVC and hand-rolled ro
 
 Additional styling was added using ```HTML```, ```CSS```, and ```Bootstrap version 4```.
 
-Getting Started:
+**_Getting Started_**
 
  1.  **Create a new directory on your computer where you'd like the program to live** 
 
