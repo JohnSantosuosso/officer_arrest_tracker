@@ -6,7 +6,7 @@ Additional styling was added using ```HTML```, ```CSS```, and ```Bootstrap versi
 
 To get started:
 
- 1.  **Create a new directory on your computer where you'd like the program to live
+ 1.  **Create a new directory on your computer where you'd like the program to live**
 
     ```mkdir /Users/your_user_name/your_folder/officer_arrest_tracker```
   
