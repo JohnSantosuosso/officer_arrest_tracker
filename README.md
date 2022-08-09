@@ -22,15 +22,15 @@ Additional styling was added using ```HTML```, ```CSS```, and ```Bootstrap versi
   
  4.  **Inside the recently created directory, clone the recently copied repository information** 
 
-      ```/Users/your_user_name/your_folder/officer_arrest_tracker main $git clone git@github.com:JohnSantosuosso/officer_arrest_tracker.git```
+      ```$git clone git@github.com:JohnSantosuosso/officer_arrest_tracker.git```
 
  5. **Open the repository in your preferred IDE.  If you are using VSCode, use the code command shown below.  See my post on IDEs for additional information.** 
 
-     ```/Users/your_user_name/your_folder/officer_arrest_tracker main $code```
+     ```$code```
 
  6.  **Reset and create & database:** 
 
-     ```rails db:{drop,create,migrate,seed}```
+     ```$rails db:{drop,create,migrate,seed}```
 
  7.  **How to run the test suite:**
 
