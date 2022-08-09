@@ -1,11 +1,11 @@
 # README
 
-This is a simple CRUD app that utilizes MVC and hand-rolled routes to create a database a police department could use to view officer information and arrest records.  This project was built using ```Rails 5.2.6``` and a ```PostgreSQL``` database.  
+Officer Arrest Tracker is a simple CRUD app that utilizes MVC and hand-rolled routes to create a database a police department could use to view officer information and arrest records.  This project was built using ```Rails 5.2.6``` and a ```PostgreSQL``` database.  
 
 Additional styling was added using ```HTML```, ```CSS```, and ```Bootstrap version 4```.
 
 To get started:
-* **Create a new directory on your computer where you'd like the program to live
+1. **Create a new directory on your computer where you'd like the program to live
 
     ```mkdir /Users/your_user_name/your_folder/officer_arrest_tracker```
   
