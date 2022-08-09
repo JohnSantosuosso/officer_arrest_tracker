@@ -23,7 +23,7 @@ To get started:
 
       ```/Users/your_user_name/your_folder/officer_arrest_tracker main $git clone git@github.com:JohnSantosuosso/officer_arrest_tracker.git```
 
- 5. **Open the repository in your preferred IDE.  If you are using VSCode.  See my post on IDEs for additional information.** 
+ 5. **Open the repository in your preferred IDE.  If you are using VSCode, use the code command shown below.  See my post on IDEs for additional information.** 
 
      ```bundle install```
 
