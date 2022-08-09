@@ -1,6 +1,6 @@
 # README
 
-Officer Arrest Tracker is a simple CRUD app that utilizes MVC and hand-rolled routes to create a basic web app that a police department could use to view officer information and arrest records.  This project was built using ```Rails 5.2.6``` and a ```PostgreSQL``` database.  
+Officer Arrest Tracker is a simple CRUD app that utilizes MVC and hand-rolled routes to create a basic web app that a police department could use to view officer information and arrest records.  This project was built using ```Rails 5.2.6``` and a ```PostgreSQL``` database and was inspired by arguably the greatest television series of all-time, 'The Wire.'
 
 Additional styling was added using ```HTML```, ```CSS```, and ```Bootstrap version 4```.
 
