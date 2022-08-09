@@ -24,7 +24,7 @@ Additional styling was added using ```HTML```, ```CSS```, and ```Bootstrap versi
 
       ```$git clone git@github.com:JohnSantosuosso/officer_arrest_tracker.git```
 
- 5. **Open the repository in your preferred IDE.  If you are using VSCode, use the code command shown below.  See my post on IDEs for additional information.** 
+ 5. **Open the repository in your preferred IDE.  If you are using VSCode, use the code command shown below.** 
 
      ```$code```
 
