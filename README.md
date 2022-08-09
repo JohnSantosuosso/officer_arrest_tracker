@@ -16,7 +16,8 @@ To get started:
   
  3.  **Clone the repository by first clicking on the code button and then copying the repository information (use SSH if you have setup a key)**
 
-     ![image](https://user-images.githubusercontent.com/95776577/183747041-40f47875-442e-4008-8d00-8c45bf2731fe.png)
+     ![183747041-40f47875-442e-4008-8d00-8c45bf2731fe](https://user-images.githubusercontent.com/95776577/183752233-c9130b38-ce16-4b4c-aeb4-fdf0d0d4a137.png)
+
 
   
  4.  **Inside the recently created directory, git clone the recently copied repository information** 
@@ -25,7 +26,7 @@ To get started:
 
  5. **Open the repository in your preferred IDE.  If you are using VSCode, use the code command shown below.  See my post on IDEs for additional information.** 
 
-     ```bundle install```
+     ```/Users/your_user_name/your_folder/officer_arrest_tracker main $code```
 
  6.  **Reset and create & database:** 
 
