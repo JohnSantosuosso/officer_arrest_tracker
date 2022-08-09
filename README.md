@@ -1,6 +1,6 @@
 # README
 
-This is a simple CRUD app that utilizes MVC to create a database that a police department could use to view officer information and arrest records.  This project was built using Rails 5.2.6 and a PostgreSQL database.  Additional styling was added using HTML, CSS, and Bootstrap version 4.
+This is a simple CRUD app that utilizes MVC to create a database that a police department could use to view officer information and arrest records.  This project was built using ```Rails 5.2.6``` and a ```PostgreSQL``` database.  Additional styling was added using ```HTML```, ```CSS```, and ```Bootstrap version 4```.
 
 To get started:
 * Fork and clone repository
