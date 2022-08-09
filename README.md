@@ -4,7 +4,7 @@ Officer Arrest Tracker is a simple CRUD app that utilizes MVC and hand-rolled ro
 
 Additional styling was added using ```HTML```, ```CSS```, and ```Bootstrap version 4```.
 
-To get started:
+Getting Started:
 
  1.  **Create a new directory on your computer where you'd like the program to live** 
 
@@ -14,7 +14,7 @@ To get started:
 
      ```/Users/your_user_name/your_folder  $cd officer_arrest_tracker ```
   
- 3.  **Clone the repository by clicking on the code button on Github repo page. Then, copy the repo information using SSH. **
+ 3.  **Clone the repository by clicking on the code button on Github repo page. Then, copy the repo information using SSH.**
 
      ![183747041-40f47875-442e-4008-8d00-8c45bf2731fe](https://user-images.githubusercontent.com/95776577/183752233-c9130b38-ce16-4b4c-aeb4-fdf0d0d4a137.png)
 
