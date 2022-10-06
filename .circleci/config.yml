@@ -2,25 +2,62 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+orbs:
+  ruby: circleci/ruby@1.1.0
+
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
+  build:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/base:stable
+      - image: cimg/ruby:2.7.4
+        auth:
+            username: mydockerhub-user
+            password: $DOCKERHUB_PASSWORD
+      # CircleCI PostgreSQL images available at: https://circleci.com/developer/images/image/cimg/postgres
+      - image: cimg/postgres:14.4
+          auth:
+            username: mydockerhub-user
+            password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+          environment:
+            POSTGRES_USER: officer_arrest_tracker
+            POSTGRES_DB: officer_arrest_tracker_test
+            POSTGRES_PASSWORD:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    environment:
+      BUNDLE_JOBS: "3"
+      BUNDLE_RETRY: "3"
+      PGHOST: 127.0.0.1
+      PGUSER: officer_arrest_tracker
+      PGPASSWORD: ""
+      RAILS_ENV: test
+
     steps:
       - checkout
+      - ruby/install-deps
+      - node/install-packages:
+          pkg-manager: yarn
+          cache-key: "yarn.lock"
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run:
+          name: Database setup
+          command: bundle exec rails db:schema:load --trace
+      # Run rspec in parallel
+      - ruby/rspec-test
+      - ruby/rubocop-check
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  version: 2
+  build_and_test:
     jobs:
-      - say-hello
+      - build
+      - test:
+          requires:
+            - build
