@@ -6,7 +6,6 @@ version: 2.1
 # read more about orbs: https://circleci.com/docs/2.0/orb-intro/
 orbs:
   ruby: circleci/ruby@1.1.0
-  node: circleci/node@2
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -15,7 +14,7 @@ jobs:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/ruby:2.7.4-node
+      - image: cimg/ruby:2.7.4
         auth:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
@@ -25,11 +24,11 @@ jobs:
 
   test:
     docker:
-      - image: cimg/ruby:2.7.4-node
+      - image: cimg/ruby:2.7.4
         auth:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
-      - image: cimg/postgres:10:22
+      - image: cimg/postgres:14.4
         auth:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
