@@ -54,7 +54,7 @@ jobs:
             command: dockerize -wait tcp://localhost:5432 -timeout 1m
         - run:
             name: Database setup
-            command: bundle exec rails db:schema:load --trace
+            command: bundle exec rails db:create db:schema:load db:seed --trace
         # Run rspec in parallel
         - ruby/rspec-test
         - ruby/rubocop-check
@@ -70,5 +70,5 @@ workflows:
       - test:
           requires:
             - build
-            
+
 store_test_results:
