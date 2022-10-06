@@ -6,6 +6,7 @@ version: 2.1
 # read more about orbs: https://circleci.com/docs/2.0/orb-intro/
 orbs:
   ruby: circleci/ruby@1.1.0
+  node: circleci/node@2
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -14,7 +15,7 @@ jobs:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: cimg/ruby:2.7.4
+      - image: cimg/ruby:2.7.4-node
         auth:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
@@ -24,7 +25,7 @@ jobs:
 
   test:
     docker:
-      - image: cimg/ruby:2.7.4
+      - image: cimg/ruby:2.7.4-node
         auth:
             username: mydockerhub-user
             password: $DOCKERHUB_PASSWORD
@@ -54,7 +55,7 @@ jobs:
             command: dockerize -wait tcp://localhost:5432 -timeout 1m
         - run:
             name: Database setup
-            command: bundle exec rails db:create db:schema:load db:seed --trace
+            command: bundle exec rails db:schema:load --trace
         # Run rspec in parallel
         - ruby/rspec-test
         - ruby/rubocop-check
@@ -70,5 +71,3 @@ workflows:
       - test:
           requires:
             - build
-
-store_test_results:
