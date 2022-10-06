@@ -6,6 +6,7 @@ version: 2.1
 # read more about orbs: https://circleci.com/docs/2.0/orb-intro/
 orbs:
   ruby: circleci/ruby@1.1.0
+  node: circleci/node@4.7.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
@@ -21,6 +22,9 @@ jobs:
     steps:
       - checkout # pull down our git code.
       - ruby/install-deps # use the ruby orb to install dependencies
+      - node/install-packages:
+          cache-key: yarn.lock
+          pkg-manager: yarn
 
   test:
     docker:
@@ -49,6 +53,9 @@ jobs:
     steps:
         - checkout
         - ruby/install-deps
+        - node/install-packages:
+            cache-key: yarn.lock
+            pkg-manager: yarn
         - run:
             name: Wait for DB
             command: dockerize -wait tcp://localhost:5432 -timeout 1m
