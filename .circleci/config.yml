@@ -70,3 +70,5 @@ workflows:
       - test:
           requires:
             - build
+            
+store_test_results:
